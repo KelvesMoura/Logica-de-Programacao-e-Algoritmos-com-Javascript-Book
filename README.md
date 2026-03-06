@@ -12,6 +12,14 @@ This repository represents a **practical implementation and study of the example
 
 ---
 
+## 🔗 Deploy
+
+### 🔗 Access the page published here:
+
+👉 https://kelvesmoura.github.io/Logica-de-Programacao-e-Algoritmos-com-Javascript-Book/
+
+---
+
 # 🎯 Project Purpose
 
 The main objective of this project is to **practice programming logic using JavaScript** through interactive exercises.
