@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JavaScript Logic" />
+    <link rel="icon" href="./public/Favicon-Site.ico" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>JavaScript Exercise</title>
+  </head>
+  <body class="flex flex-col gap-6">
+    <!-- Programa Situação do Aluno - Eg_4.1 -->
+    <section class="student p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_4.1.png"
+        class="w-[450px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa Situação do Aluno
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Nome do Aluno
+          <input
+            type="type"
+            name="studentName"
+            id="studentName"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          1° Nota
+          <input
+            type="number"
+            name="firstGrade"
+            id="firstGrade"
+            min="0"
+            step="0.1"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          2° Nota
+          <input
+            type="number"
+            name="secondGrade"
+            id="secondGrade"
+            min="0"
+            step="0.1"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Exibir Média e Situação"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-4 font-bold text-xl text-center"></h3>
+      <h4 class="mt-2 font-bold text-xl text-center"></h4>
+    </section>
+    <!-- Programa Cálculo de Peso Ideal - Eg_4.2 -->
+    <section class="weight p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_4.2.png"
+        class="w-[400px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa Cálculo de Peso Ideal
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Nome
+          <input
+            type="type"
+            name="name"
+            id="name"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          Sexo
+          <input
+            type="radio"
+            name="sexo"
+            id="male"
+            class="border-2 rounded-md mx-2"
+            required
+          />Masculino
+          <input
+            type="radio"
+            name="sexo"
+            id="female"
+            class="border-2 rounded-md mx-2"
+            required
+          />
+          Feminino
+        </p>
+        <p class="mt-4">
+          Altura
+          <input
+            type="number"
+            name="height"
+            id="height"
+            min="0"
+            step="0.01"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Calcular Peso Ideal"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-4 font-bold text-xl"></h3>
+    </section>
+    <!-- Programa Fuso Horário - Eg_4.6.b -->
+    <section class="timeZone p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_4.6.a.png"
+        class="w-[200px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa Fuso Horário
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Hora no Brasil (h.m):
+          <input
+            type="number"
+            name="time"
+            id="time"
+            min="0"
+            step="0.01"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Exibir Hora na França"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-4 font-bold text-xl"></h3>
+    </section>
+    <!-- Programa Raiz Quadrada - Eg_4.6.b -->
+    <section class="sqrt p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_4.6.b.png"
+        class="w-[200px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa Raiz Quadrada
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Número:
+          <input
+            type="number"
+            name="number"
+            id="number"
+            min="0"
+            step="0.01"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Exibir Raiz Quadrada"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-4 font-bold text-xl"></h3>
+    </section>
+    <!-- Programa de Caixa Eletrônico - Eg_4.6.c -->
+    <section class="atm p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_4.6.c.png"
+        class="w-[200px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa de Caixa Eletrônico
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Valor do Saque R$:
+          <input
+            type="number"
+            name="withdraw"
+            id="withdraw"
+            min="10"
+            required
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Exibir Notas para Saque"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-4 font-bold text-xl" id="note100"></h3>
+      <h3 class="mt-2 font-bold text-xl" id="note50"></h3>
+      <h3 class="mt-2 font-bold text-xl" id="note10"></h3>
+    </section>
+    <!-- Programa Parquímetro - Eg_4.8.c -->
+    <section class="parking p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_4.8.c.png"
+        class="w-[250px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa Parquímetro
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Valor R$:
+          <input
+            type="number"
+            name="payment"
+            id="payment"
+            min="1"
+            step="0.01"
+            required
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Confirmar Depósito"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-4 font-bold text-xl" id="time"></h3>
+      <h3 class="mt-4 font-bold text-xl" id="change"></h3>
+    </section>
+    <!-- Programa de Lados de Um Triângulo - Eg_4.8.d -->
+    <section class="triangle p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_4.8.d.png"
+        class="w-[350px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa Lados de Um Triângulo
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Lado A:
+          <input
+            type="number"
+            name="sideA"
+            id="sideA"
+            min="1"
+            required
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          Lado B:
+          <input
+            type="number"
+            name="sideB"
+            id="sideB"
+            min="1"
+            required
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          Lado C:
+          <input
+            type="number"
+            name="sideC"
+            id="sideC"
+            min="1"
+            required
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Verificar Lados"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-4 font-bold text-xl" id="resp"></h3>
+      <h3 class="mt-4 font-bold text-xl" id="type"></h3>
+    </section>
+    <!-- Programa de Tabuada - Eg_5.1 -->
+    <section class="multiplication-table p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_5.1.png"
+        class="w-[350px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa Tabuada
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Número:
+          <input
+            type="number"
+            name="numberInput"
+            id="numberInput"
+            step="1"
+            required
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Mostrar Tabuada"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <pre class="mt-4 text-lg"></pre>
+    </section>
+    <!-- Programa de Decrescentes - Eg_5.2 -->
+    <section class="decrescent p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_5.2.png"
+        class="w-[350px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa Números Decrescentes
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Número:
+          <input
+            type="number"
+            name="numberInput"
+            id="numberInput"
+            step="1"
+            required
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Decrescer até 1"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <pre class="mt-4 text-lg text-wrap"></pre>
+    </section>
+    <!-- Interrupções nos Laços - Eg_5.3 -->
+    <section class="break_continue p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_5.3.png"
+        class="w-[350px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Interrupções nos Laços
+      </h1>
+      <button
+        class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+      >
+        Iniciar Teste
+      </button>
+      <p class="mt-6 text-xl font-bold">Funcionalidade:</p>
+      <ul class="list-disc text-lg">
+        <li class="mt-4">
+          Caso o valor seja 0 ou inválido, irá direcionar para Confirmação de
+          Saída
+        </li>
+        <li>
+          Número par irá mostrar o dobro. Número impar irá mostrar o triplo.
+        </li>
+        <li>Comando: OK = Continue | Cancel = Break</li>
+      </ul>
+    </section>
+    <script src="./src/assets/js/Content.js"></script>
+  </body>
+</html>
