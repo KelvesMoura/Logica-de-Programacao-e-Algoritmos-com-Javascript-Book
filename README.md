@@ -56,6 +56,12 @@ Several programs interact directly with **HTML forms and inputs**, allowing user
 
 Examples:
 
+- 🎬 Movie duration converter
+- 🚗 Vehicle promotion simulator
+- 🍽 Restaurant price calculator
+- 💊 Pharmacy promotion calculator
+- 💻 Lan house billing system
+- 🛒 Supermarket offer calculator
 - 🎓 Student grade evaluation
 - ⚖️ Ideal weight calculator
 - 🧮 Square root calculator
@@ -67,6 +73,7 @@ Concepts practiced:
 - `querySelector`
 - Form handling
 - Dynamic content updates
+- DOM manipulation
 
 ---
 
@@ -80,6 +87,7 @@ Examples:
 - ⚖️ Ideal weight calculation based on gender
 - 🚗 Parking time based on payment value
 - 🔺 Triangle type identification
+- 🏧 ATM withdrawal validation
 
 Concepts practiced:
 
@@ -175,18 +183,36 @@ Possible uses:
 
 # 🧪 Implemented Programs
 
-This repository includes exercises such as:
+This repository currently includes the following exercises:
+
+### 📖 Chapter 2
+
+- 🎬 Cine JS — Movie Duration Converter
+- 🚗 Vehicle Dealership Promotion
+- 🍽 Restaurant Price Calculator
+- 💊 Pharmacy Promotion (Buy 2 Offer)
+- 💻 Lan House Billing Calculator
+- 🛒 Supermarket Promotion (3 for Price)
+
+---
+
+### 📖 Chapter 4
 
 - 🎓 Student Grade Evaluation
 - ⚖️ Ideal Weight Calculator
-- 🌍 Time Zone Converter
+- 🌍 Time Zone Converter (Brazil → France
 - 🧮 Square Root Calculator
 - 🏧 ATM Withdrawal System
 - 🚗 Parking Meter Simulator
 - 🔺 Triangle Type Identifier
+
+---
+
+### 📖 Chapter 5
+
 - ✖️ Multiplication Table Generator
-- 🔽 Descending Number Generator
-- 🔄 Interactive Number Loop
+- 🔽 Descending Numbers Generator
+- 🔄 Loop Interruption Test _(break / continue with do...while)_
 
 ---
 

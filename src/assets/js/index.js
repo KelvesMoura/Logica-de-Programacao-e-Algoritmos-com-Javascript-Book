@@ -1,6 +1,126 @@
 // Chapter04
 
-// Programa Cálculo de Peso - Eg_4.1
+// Programa Cine JS - Filmes em Cartaz - Eg_2.9
+const cineFrm = document.querySelector(".cine form");
+const cineResph3 = document.querySelector(".cine h3");
+const cineResph4 = document.querySelector(".cine h4");
+
+cineFrm.addEventListener("submit", (e) => {
+  const nameMovie = cineFrm.movie.value;
+  const durationMovie = Number(cineFrm.duration.value);
+
+  const hours = Math.floor(durationMovie / 60);
+  const minutes = durationMovie % 60;
+
+  cineResph3.innerText = nameMovie;
+  cineResph4.innerText = `${hours} horas(s) ${minutes} minuto(s)`;
+  e.preventDefault();
+});
+
+cineFrm.addEventListener("reset", (e) => {
+  cineResph3.innerText = "";
+  cineResph4.innerText = "";
+});
+
+// Programa Revenda de Veículo JS - Eg_2.9.b
+const carFrm = document.querySelector(".car form");
+const carVehiclesName = document.querySelector(".car h3");
+const carInputPrice = document.querySelector(".car #inputPrice");
+const carInstallmentPrice = document.querySelector(".car #installmentPrice");
+
+carFrm.addEventListener("submit", (e) => {
+  const nameInput = carFrm.vehicles.value;
+  const priceValue = Number(carFrm.price.value);
+
+  const halfPrice = priceValue / 2;
+  const parcelValue = (priceValue - halfPrice) / 12;
+
+  carVehiclesName.innerText = `Promoção: ${nameInput}`;
+  carInputPrice.innerText = `Entrada de R$ ${halfPrice.toFixed(2)}`;
+  carInstallmentPrice.innerText = `+12x R$ ${parcelValue.toFixed(2)}`;
+
+  e.preventDefault();
+});
+
+carFrm.addEventListener("reset", (e) => {
+  carVehiclesName.innerText = "";
+  carInputPrice.innerText = "";
+  carInstallmentPrice.innerText = "";
+});
+
+// Programa Restaurante JS - Eg_2.9.c
+const restaurantFrm = document.querySelector(".restaurant form");
+const restaurantResp = document.querySelector(".restaurant h3");
+
+restaurantFrm.addEventListener("submit", (e) => {
+  const priceFood = Number(restaurantFrm.price.value);
+  const amountFood = Number(restaurantFrm.amount.value);
+  const priceTotal = (priceFood * amountFood) / 1000;
+
+  restaurantResp.innerText = `Valor a pagar R$ ${priceTotal.toFixed(2)}`;
+
+  e.preventDefault();
+});
+
+restaurantFrm.addEventListener("reset", (e) => {
+  restaurantResp.innerText = "";
+});
+
+// Programa Farmácia JS - Eg_2.10.a
+const drugFrm = document.querySelector(".drug form");
+const drugRespNameProduct = document.querySelector(".drug #nameProduct");
+const drugRespDiscountProduct = document.querySelector(
+  ".drug #discountProduct",
+);
+
+drugFrm.addEventListener("submit", (e) => {
+  const priceFinal = Math.floor(drugFrm.amount.value * 2);
+  const inputName = drugFrm.product.value;
+  drugRespNameProduct.innerText = `Promoção de ${inputName}`;
+  drugRespDiscountProduct.innerText = `Leve 2 por apenas R$ ${priceFinal.toFixed(2)}`;
+  e.preventDefault();
+});
+
+drugFrm.addEventListener("reset", (e) => {
+  drugRespNameProduct.innerText = "";
+  drugRespDiscountProduct.innerText = "";
+});
+
+// Programa Lan House JS - Eg_2.10.b
+const lanFrm = document.querySelector(".lan form");
+const lanResp = document.querySelector(".lan h3");
+
+lanFrm.addEventListener("submit", (e) => {
+  const time = Math.ceil(Number(lanFrm.time.value) / 15);
+  const price = Number(lanFrm.amount.value);
+
+  const totalPrice = time * price;
+  lanResp.innerText = `Valor total á Pagar: R$ ${totalPrice.toFixed(2)}`;
+  e.preventDefault();
+});
+
+lanFrm.addEventListener("reset", (e) => {
+  lanResp.innerText = "";
+});
+
+// Programa Supermercado JS - Eg_2.10.c
+const marketFrm = document.querySelector(".market form");
+const marketRespOffer = document.querySelector(".market h3");
+
+marketFrm.addEventListener("submit", (e) => {
+  const nameProduct = marketFrm.product.value;
+  const priceProduct = Number(marketFrm.price.value);
+  const offer = priceProduct * 2 + priceProduct / 2;
+
+  marketRespOffer.innerText = `Leve 3 ${nameProduct} e pague somente R$ ${offer.toFixed(2)}`;
+  e.preventDefault();
+});
+
+marketFrm.addEventListener("reset", (e) => {
+  marketRespOffer.innerText = "";
+});
+
+// Programa Situação do Aluno - Eg_4.1
 const studentFrm = document.querySelector(".student form");
 const studentResph3 = document.querySelector(".student h3");
 const studentResph4 = document.querySelector(".student h4");
@@ -26,7 +146,7 @@ studentFrm.addEventListener("reset", (e) => {
   studentResph4.innerText = "";
 });
 
-// Programa Cálculo de Peso - Eg_4.2
+// Programa Cálculo de Peso Ideal - Eg_4.2
 const weightFrm = document.querySelector(".weight form");
 const weightResph3 = document.querySelector(".weight h3");
 

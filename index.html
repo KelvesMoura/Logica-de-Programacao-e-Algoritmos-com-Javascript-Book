@@ -9,11 +9,259 @@
     <title>JavaScript Exercise</title>
   </head>
   <body class="flex flex-col gap-6">
+    <!-- Programa Cine JS - Filmes em Cartaz - Eg_2.9 -->
+    <section class="cine p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_2.9.png"
+        class="w-[400px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="text-3xl font-bold border-b-2 border-gray-400">Cine JS: Filmes em Cartaz</h1>
+      <form>
+        <p class="mt-4 mr-2">
+          Título do Filme
+          <input
+            type="text"
+            name="movie"
+            id="movie"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4 mr-2">
+          Duração (min)
+          <input
+            type="number"
+            name="duration"
+            id="duration"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Converter em Horas e Minutos"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="text-2xl font-bold mt-4"></h3>
+      <h4 class="font-bold"></h4>
+    </section>
+    <!-- Programa Revenda de Veículo JS - Eg_2.9.b  -->
+    <section class="car p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_2.9.b.png"
+        class="w-[400px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl border-b-2 border-gray-400">Revenda de Veículos JS</h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Veículo
+          <input
+            type="text"
+            name="vehicles"
+            id="vehicles"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          Preço R$
+          <input
+            type="number"
+            name="price"
+            id="price"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Ver Promoção"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-6 font-bold text-xl text-center"></h3>
+      <h4 id="inputPrice" class="mt-2 font-bold text-center"></h4>
+      <h4 id="installmentPrice" class="mt-2 font-bold text-center"></h4>
+    </section>
+    <!-- Programa Restaurante JS - Eg_2.9.c  -->
+    <section class="restaurant p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_2.9.c.png"
+        class="w-[400px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl border-b-2 border-gray-400">Restaurante JS</h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Buffet por Quilo R$
+          <input
+            type="number"
+            name="price"
+            id="price"
+            min="0"
+            step="0.01"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          Consumo do Cliente (gr)
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            min="0"
+            step="0.01"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Calcular Preço"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-6 font-bold text-xl text-center"></h3>
+    </section>
+    <!-- Programa Farmácia JS - Eg_2.10.a -->
+    <section class="drug p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_2.10.a.png"
+        class="w-[400px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl border-b-2 border-gray-400">Farmácia JS</h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Medicamento
+          <input
+            type="text"
+            name="product"
+            id="product"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          Preço R$
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            min="0"
+            step="0.01"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Mostrar Promoção"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-8 font-bold text-xl text-center" id="nameProduct"></h3>
+      <h3 class="mt-2 font-bold text-xl text-center" id="discountProduct"></h3>
+    </section>
+    <!-- Programa Lan House JS - Eg_2.10.b -->
+    <section class="lan p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_2.10.b.png"
+        class="w-[400px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl border-b-2 border-gray-400">Lan House JS</h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Tempo de Uso (min)
+          <input
+            type="number"
+            name="time"
+            id="time"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          Valor por 15 minutos R$
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            min="0"
+            step="0.01"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Valor á Pagar"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-6 font-bold text-xl text-center"></h3>
+    </section>
+    <!-- Programa Supermercado JS - Eg_2.10.c -->
+    <section class="market p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_2.10.c.png"
+        class="w-[400px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl border-b-2 border-gray-400">Supermercado JS</h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Nome do Produto
+          <input
+            type="type"
+            name="product"
+            id="product"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <p class="mt-4">
+          Preço do Produto R$
+          <input
+            type="number"
+            name="price"
+            id="price"
+            min="0"
+            step="0.01"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Valor á Pagar"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-8 font-bold text-xl text-center"></h3>
+    </section>
     <!-- Programa Situação do Aluno - Eg_4.1 -->
     <section class="student p-2 pb-5 border-b-2 border-gray-400">
       <img
         src="./src/assets/image/Eg_4.1.png"
-        class="w-[450px] h-auto float-left mr-6 rounded-xl"
+        class="w-[400px] h-auto float-left mr-6 rounded-xl"
       />
       <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
         Programa Situação do Aluno
@@ -416,6 +664,6 @@
         <li>Comando: OK = Continue | Cancel = Break</li>
       </ul>
     </section>
-    <script src="./src/assets/js/Content.js"></script>
+    <script src="./src/assets/js/index.js"></script>
   </body>
 </html>
