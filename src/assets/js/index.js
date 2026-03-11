@@ -1,6 +1,6 @@
 // Chapter04
 
-// Programa Cine JS - Filmes em Cartaz - Eg_2.9
+// Cine JS Program - Now Playing - Eg_2.9
 const cineFrm = document.querySelector(".cine form");
 const cineResph3 = document.querySelector(".cine h3");
 const cineResph4 = document.querySelector(".cine h4");
@@ -22,7 +22,7 @@ cineFrm.addEventListener("reset", (e) => {
   cineResph4.innerText = "";
 });
 
-// Programa Revenda de Veículo JS - Eg_2.9.b
+// JS Vehicle Resale Program - Eg_2.9.b
 const carFrm = document.querySelector(".car form");
 const carVehiclesName = document.querySelector(".car h3");
 const carInputPrice = document.querySelector(".car #inputPrice");
@@ -48,7 +48,7 @@ carFrm.addEventListener("reset", (e) => {
   carInstallmentPrice.innerText = "";
 });
 
-// Programa Restaurante JS - Eg_2.9.c
+// JS Restaurant Program - Eg_2.9.c
 const restaurantFrm = document.querySelector(".restaurant form");
 const restaurantResp = document.querySelector(".restaurant h3");
 
@@ -66,7 +66,7 @@ restaurantFrm.addEventListener("reset", (e) => {
   restaurantResp.innerText = "";
 });
 
-// Programa Farmácia JS - Eg_2.10.a
+// Pharmacy Program JS - Eg_2.10.a
 const drugFrm = document.querySelector(".drug form");
 const drugRespNameProduct = document.querySelector(".drug #nameProduct");
 const drugRespDiscountProduct = document.querySelector(
@@ -86,7 +86,7 @@ drugFrm.addEventListener("reset", (e) => {
   drugRespDiscountProduct.innerText = "";
 });
 
-// Programa Lan House JS - Eg_2.10.b
+// PLan House JS Program- Eg_2.10.b
 const lanFrm = document.querySelector(".lan form");
 const lanResp = document.querySelector(".lan h3");
 
@@ -103,7 +103,7 @@ lanFrm.addEventListener("reset", (e) => {
   lanResp.innerText = "";
 });
 
-// Programa Supermercado JS - Eg_2.10.c
+// JS Supermarket Program - Eg_2.10.c
 const marketFrm = document.querySelector(".market form");
 const marketRespOffer = document.querySelector(".market h3");
 
@@ -120,7 +120,7 @@ marketFrm.addEventListener("reset", (e) => {
   marketRespOffer.innerText = "";
 });
 
-// Programa Situação do Aluno - Eg_4.1
+// Student Status Program - Eg_4.1
 const studentFrm = document.querySelector(".student form");
 const studentResph3 = document.querySelector(".student h3");
 const studentResph4 = document.querySelector(".student h4");
@@ -146,7 +146,7 @@ studentFrm.addEventListener("reset", (e) => {
   studentResph4.innerText = "";
 });
 
-// Programa Cálculo de Peso Ideal - Eg_4.2
+// Ideal Weight Calculation Program - Eg_4.2
 const weightFrm = document.querySelector(".weight form");
 const weightResph3 = document.querySelector(".weight h3");
 
@@ -174,7 +174,7 @@ weightFrm.addEventListener("reset", (e) => {
   weightResph3.innerText = "";
 });
 
-// Programa Raiz Quadrada - Eg_4.6.a
+// Time Zone Program - Eg_4.6.a
 const timeZoneFrm = document.querySelector(".timeZone form");
 const timeZoneRespH3 = document.querySelector(".timeZone h3");
 
@@ -190,7 +190,7 @@ timeZoneFrm.addEventListener("reset", (e) => {
   timeZoneRespH3.innerText = "";
 });
 
-// Programa Raiz Quadrada - Eg_4.6.b
+// Square Root Program - Eg_4.6.b
 const sqrtFrm = document.querySelector(".sqrt form");
 const sqrtRespH3 = document.querySelector(".sqrt h3");
 
@@ -208,7 +208,7 @@ sqrtFrm.addEventListener("reset", (e) => {
   sqrtRespH3.innerText = "";
 });
 
-// Program de Caixa Eletrônico - Eg_4.6.c
+// ATM Program - Eg_4.6.c
 const atmFrm = document.querySelector(".atm form");
 const atmResp100 = document.querySelector(".atm #note100");
 const atmResp50 = document.querySelector(".atm #note50");
@@ -247,7 +247,7 @@ atmFrm.addEventListener("reset", (e) => {
   atmResp10.innerText = "";
 });
 
-// Program Parquímetro - Eg_4.8.c
+// Parking Meter Program - Eg_4.8.c
 const parkingFrm = document.querySelector(".parking form");
 const parkingTime = document.querySelector(".parking #time");
 const parkingChange = document.querySelector(".parking #change");
@@ -277,7 +277,7 @@ parkingFrm.addEventListener("reset", (e) => {
   parkingChange.innerText = "";
 });
 
-// Programa Lados de Um Triângulo - Eg_4.8.d
+// Program for the Sides of a Triangle - Eg_4.8.d
 const triangleFrm = document.querySelector(".triangle form");
 const triangleResp = document.querySelector(".triangle #resp");
 const triangleType = document.querySelector(".triangle #type");
@@ -309,7 +309,7 @@ triangleFrm.addEventListener("reset", (e) => {
 
 // Chapter05
 
-// Programa de Tabuada - Eg_5.1
+// Multiplication Table Program - Eg_5.1
 const tabuadaFrm = document.querySelector(".multiplication-table form");
 const tabuadaResp = document.querySelector(".multiplication-table pre");
 
@@ -327,7 +327,7 @@ tabuadaFrm.addEventListener("reset", (e) => {
   tabuadaResp.innerText = "";
 });
 
-// Programa de Tabuada - Eg_5.2
+// Decreasing Program - Eg_5.2
 const decrescentFrm = document.querySelector(".decrescent form");
 const decrescentResp = document.querySelector(".decrescent pre");
 
@@ -349,26 +349,197 @@ decrescentFrm.addEventListener("reset", (e) => {
   decrescentResp.innerText = "";
 });
 
-// Programa de Tabuada - Eg_5.3
-const buttonDoWhile = document.querySelector(".break_continue button");
+// Breaks in Ties - Eg_5.3
+const startTest = document.querySelector(".break_continue button");
 
-buttonDoWhile.addEventListener("click", (e) => {
+startTest.addEventListener("click", (e) => {
   alert("Digite 0 para sair");
   do {
-    const value = Number(prompt("Número: "));
-    if (value == 0 || isNaN(value)) {
-      const sair = confirm("Confirma Saída");
-      if (sair) {
+    const number = Number(prompt("Número: "));
+    if (number == 0 || isNaN(number)) {
+      const exit = confirm("Confirma saída?");
+      if (exit) {
         break;
       } else {
-        contine;
+        continue;
       }
     }
-    if (value % 2 == 0) {
-      alert(`O dobro o do ${value} é ${value * 2}`);
+    if (number % 2 == 0) {
+      alert(`O dobro de ${number} é ${number * 2}`);
     } else {
-      alert(`O triplo de ${value} é ${value * 3}`);
+      alert(`O triplo de ${number} é ${number * 3}`);
     }
   } while (true);
-  alert("Bye, bye...");
+});
+
+// Monthly Accounts Program in Laços - Eg_5.5
+const billFrm = document.querySelector(".bill_month form");
+const billResp1 = document.querySelector(".bill_month #resp1");
+const billResp2 = document.querySelector(".bill_month #resp2");
+
+let totalAmount = 0; // Declarado como variável global, pois após submite a memória interna retorna forma zera.
+let countBill = 0; // Declarado como variável global, pois após submite a memória interna retorna forma zera.
+
+billFrm.addEventListener("submit", (e) => {
+  const bill = billFrm.bill.value;
+  const priceBill = Number(billFrm.amount.value);
+
+  totalAmount += priceBill;
+  countBill++;
+
+  billResp1.innerText += `${bill} - R$ ${priceBill.toFixed(2)}\n`;
+  billResp2.innerText = `--------------------\n${countBill} Conta(s) - Total R$ ${totalAmount.toFixed(2)}`;
+
+  billFrm.bill.value = "";
+  billFrm.amount.value = "";
+
+  e.preventDefault();
+});
+
+billFrm.addEventListener("reset", (e) => {
+  billResp1.innerText = "";
+  billResp2.innerText = "";
+});
+
+// Prime Numbers Program - Eg_5.6
+const primeFrm = document.querySelector(".primes form");
+const primeResp = document.querySelector(".primes h3");
+
+primeFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const number = Number(primeFrm.number.value);
+  // let countI = 0;
+
+  // for (let i = 1; i <= number; i++) {
+  //   if (number % i == 0) {
+  //     countI++;
+  //   }
+  //   if (countI == 2) {
+  //     primeResp.innerText = `${number} É primo`;
+  //   } else {
+  //     primeResp.innerText = `${number} Não é primo`;
+  //   }
+  // }
+
+  // Alternativa com foco em Perfomance, uma vez que se o número for divido por 2 o mesmo já deixa de ser primo.
+  // No caso do número 2, o mesmo não entra no for, sendo validado diretamente no primeiro termo do if.
+  let hasDivider = 0;
+
+  for (let i = 2; i <= number / 2; i++) {
+    if (number % i == 0) {
+      hasDivider = 1;
+      break;
+    }
+  }
+  if (number > 1 && !hasDivider) {
+    primeResp.innerText = `${number} É primo`;
+    primeFrm.number.value = "";
+  } else {
+    primeResp.innerText = `${number} Não é primo`;
+    primeFrm.number.value = "";
+  }
+});
+
+primeFrm.addEventListener("reset", (e) => {
+  primeResp.innerText = "";
+});
+
+// Star Factory Machine - Eg_5.7
+const starFrm = document.querySelector(".star form");
+const starResp = document.querySelector(".star h3");
+
+starFrm.addEventListener("submit", (e) => {
+  const amount = Number(starFrm.number.value);
+  let star = "";
+  for (let i = 1; i <= amount; i++) {
+    if (i % 2 == 1) {
+      star += "*";
+    } else {
+      star += "_";
+    }
+    starResp.innerText = star;
+  }
+  e.preventDefault();
+});
+
+starFrm.addEventListener("reset", (e) => {
+  starResp.innerText = "";
+});
+
+// World Cup Program - Eg_5.8
+const worldCupFrm = document.querySelector(".worldCup form");
+const worldCupResp = document.querySelector(".worldCup h3");
+
+worldCupFrm.addEventListener("submit", (e) => {
+  const year = Number(worldCupFrm.year.value);
+  if (year <= 0) {
+    alert("Valor Inválido");
+  } else if (year >= new Date().getFullYear() && year % 4 == 2) {
+    worldCupResp.innerText = `Haverá Copa do Mundo no ano de ${year}`;
+  } else if (year == 1942 || year == 1946) {
+    worldCupResp.innerText = `Não houve Copa do Mundo no ano de ${year}, devido a Guerra Mundial`;
+  } else if (year >= 1930 && year % 4 == 2) {
+    worldCupResp.innerText = `Houve Copa do Mundo no ano de ${year}`;
+  } else {
+    worldCupResp.innerText = `Não houve Copa do Mundo no ano de ${year}`;
+  }
+  e.preventDefault();
+});
+
+worldCupFrm.addEventListener("reset", (e) => {
+  worldCupResp.innerText = "";
+});
+
+// Repeat Fruit Program - Eg_5.8.a
+const fruitFrm = document.querySelector(".fruits form");
+const fruitResp = document.querySelector(".fruits h3");
+
+fruitFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = fruitFrm.name.value;
+  const times = Number(fruitFrm.time.value);
+  let resp = `${name}`;
+
+  for (let i = 1; i < times; i++) {
+    fruitResp.innerText += `${resp.padStart(5)} *`;
+  }
+  fruitResp.innerText += `${resp.padStart(5)}`;
+});
+
+fruitFrm.addEventListener("reset", (e) => {
+  fruitResp.innerText = "";
+});
+
+// Chinchilla Breeding Program - Eg_5.8.b
+// The initial number from amount must be equal or greater than 2
+// Each year, chincillas will be triplicate
+
+const petFrm = document.querySelector(".pet form");
+const petResp = document.querySelector(".pet pre");
+
+petFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const { amount, year } = petFrm;
+  let petAmount = Number(amount.value);
+  const petYear = Number(year.value);
+
+  let resp = "";
+
+  if (petAmount < 2) {
+    alert("O valor mínimo para reprodução é de 2 Chinchilas");
+    petFrm.reset();
+    return;
+  }
+  for (let i = 1; i <= petYear; i++) {
+    if (i > 1) {
+      // Multiple Chinchilas inital number to 3
+      petAmount *= 3;
+    }
+    resp += `${i}° Ano: ${petAmount} Chinchilas\n`;
+  }
+  petResp.innerText = resp;
+});
+
+petFrm.addEventListener("reset", (e) => {
+  petResp.innerText = "";
 });
