@@ -31,7 +31,7 @@ These examples help reinforce:
 - 💻 JavaScript fundamentals
 - 🌐 Interaction between **JavaScript and HTML**
 
-The exercises simulate small programs such as calculators, grade systems, and control logic.
+The exercises simulate small programs such as calculators, grade systems, and logical simulations.
 
 ---
 
@@ -107,13 +107,19 @@ Examples:
 - ✖️ Multiplication table generator
 - 🔽 Descending number sequence
 - 🔄 Interactive loop using `do...while`
+- 🔢 Prime number validation
+- ⭐ Pattern generation with symbols
+- ⚽ Year validation loops
 
 Concepts practiced:
 
 - `for`
+- `while`
 - `do...while`
 - `break`
 - `continue`
+- Nested loops
+- Mathematical iteration
 
 ---
 
@@ -124,15 +130,16 @@ Several exercises manipulate **strings and numbers** to produce formatted output
 Examples:
 
 - 📄 Text-based reports
-- 🔢 Mathematical operations
-- 📊 Number formatting
+- 🔢 Mathematical calculations
+- ⭐ Symbol pattern generation
+- 🍎 String repetition exercises
 
 Concepts practiced:
 
 - Template literals
 - String concatenation
 - `toFixed()`
-- Mathematical operations
+- Numeric calculations
 
 ---
 
@@ -157,27 +164,17 @@ The project uses **event-driven programming** to trigger actions when users inte
 
 Examples:
 
-- `submit` events for form calculations
+- Form `submit` events for calculations
 - `reset` events to clear results
-- `click` events for interactive loops
+- `click` events for interactive features
+- Dynamic DOM updates
 
 Concepts practiced:
 
 - Event listeners
 - Callback functions
 - DOM manipulation
-
----
-
-# 💾 Local Storage
-
-The project structure allows the use of **Local Storage** for client-side data persistence.
-
-Possible uses:
-
-- Saving user preferences
-- Persisting form data
-- Storing application states
+- Form interaction
 
 ---
 
@@ -185,34 +182,68 @@ Possible uses:
 
 This repository currently includes the following exercises:
 
-### 📖 Chapter 2
+---
 
-- 🎬 Cine JS — Movie Duration Converter
-- 🚗 Vehicle Dealership Promotion
-- 🍽 Restaurant Price Calculator
-- 💊 Pharmacy Promotion (Buy 2 Offer)
-- 💻 Lan House Billing Calculator
-- 🛒 Supermarket Promotion (3 for Price)
+## 📖 Chapter 2 — HTML Forms and Interaction
+
+- 🎬 **Cine JS** — Movie Duration Converter
+- 🚗 **Vehicle Dealership Promotion**
+- 🍽 **Restaurant Price Calculator**
+- 💊 **Pharmacy Promotion** _(Buy 2 Offer)_
+- 💻 **Lan House Billing Calculator**
+- 🛒 **Supermarket Promotion** _(3 for Price)_
 
 ---
 
-### 📖 Chapter 4
+## 📖 Chapter 4 — Conditional Logic
 
-- 🎓 Student Grade Evaluation
-- ⚖️ Ideal Weight Calculator
-- 🌍 Time Zone Converter (Brazil → France
-- 🧮 Square Root Calculator
-- 🏧 ATM Withdrawal System
-- 🚗 Parking Meter Simulator
-- 🔺 Triangle Type Identifier
+- 🎓 **Student Grade Evaluation**
+- ⚖️ **Ideal Weight Calculator**
+- 🌍 **Time Zone Converter** _(Brazil → France)_
+- 🧮 **Square Root Calculator**
+- 🏧 **ATM Withdrawal System**
+- 🚗 **Parking Meter Simulator**
+- 🔺 **Triangle Type Identifier**
 
 ---
 
-### 📖 Chapter 5
+## 📖 Chapter 5 — Repetition Structures
 
-- ✖️ Multiplication Table Generator
-- 🔽 Descending Numbers Generator
-- 🔄 Loop Interruption Test _(break / continue with do...while)_
+- ✖️ **Multiplication Table Generator**
+- 🔽 **Descending Numbers Generator**
+- 🔄 **Loop Interruption Test** _(break / continue with do...while)_
+- 🧾 **Monthly Accounts Register** _(Bills of the Month Program)_
+- 🔢 **Prime Number Checker**
+- ⭐ **Star Factory** _(Symbol Pattern Generator)_
+- ⚽ **World Cup Year Validator**
+- 🍎 **Repeat Fruit Program**
+- 🐹 **Chinchilla Breeding Simulation**
+- 🔷 **Perfect Number Checker**
+
+Concepts practiced:
+
+- `for`
+- `while`
+- `do...while`
+- Nested loops
+- Divisibility logic
+- Accumulation patterns
+
+---
+
+## 📖 Chapter 6 — Arrays and Interactive Programs
+
+- 🦷 **Dental Office Queue System**
+- 🎮 **Guess the Number Game**
+
+Concepts practiced:
+
+- Arrays (`push`, `shift`, `unshift`)
+- Queue simulation
+- Random number generation
+- Game logic
+- DOM interaction
+- Event handling
 
 ---
 
@@ -221,5 +252,5 @@ This repository currently includes the following exercises:
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone <https://github.com/KelvesMoura/Logica-de-Programacao-e-Algoritmos-com-Javascript-Book.git>
+git clone https://github.com/KelvesMoura/Logica-de-Programacao-e-Algoritmos-com-Javascript-Book.git
 ```

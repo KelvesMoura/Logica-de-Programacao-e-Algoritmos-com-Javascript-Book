@@ -896,6 +896,139 @@
       </form>
       <pre class="mt-6 font-bold"></pre>
     </section>
+    <!-- Perfect Numbers Program - Eg_5.8.c -->
+    <section class="perfectNumber p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_5.8.c.png"
+        class="w-[350px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Programa Número Perfeito
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Número
+          <input
+            type="number"
+            name="inputNumber"
+            id="inputNumber"
+            class="border-2 rounded-md px-2"
+          />
+        </p>
+        <input
+          type="submit"
+          value="Verificar se é Perfeito Frutas"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="reset"
+          value="Limpar Valores"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <pre class="mt-6 font-bold" id="divisors"></pre>
+      <pre class="mt-6 font-bold" id="resp"></pre>
+    </section>
+    <!-- Dental Offic Program - Eg_6.3 -->
+    <section class="dental p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_6.3.png"
+        class="w-[350px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Consultório Odontológico
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Paciente
+          <!-- Autofocus inicia o cursor no campo definido -->
+          <input
+            type="text"
+            name="patient"
+            id="patient"
+            class="border-2 rounded-md px-2"
+            required
+          />
+          <!-- Colocar dentro do input acima => autofocus -->
+        </p>
+        <input
+          type="submit"
+          value="Adicionar"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="button"
+          value="Urgência"
+          id="urgent"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="button"
+          value="Atender"
+          id="treat"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+        <input
+          type="button"
+          value="Desistiu"
+          id="gave-up"
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        />
+      </form>
+      <h3 class="mt-6 font-bold">
+        Em Atendimento: <span class="mt-6 font-bold text-blue-500"></span>
+      </h3>
+      <pre class="mt-6 font-bold" id="patients"></pre>
+    </section>
+    <!-- Guess the Number Game - Eg_6.4 -->
+    <section class="guessNumber p-2 pb-5 border-b-2 border-gray-400">
+      <img
+        src="./src/assets/image/Eg_6.4.png"
+        class="w-[350px] h-auto float-left mr-6 rounded-xl"
+      />
+      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+        Jogo Descubra o Número
+      </h1>
+      <form class="ml-2">
+        <p class="mt-4">
+          Número
+          <input
+            type="text"
+            name="number"
+            id="number"
+            class="border-2 rounded-md px-2"
+            min="1"
+            max="100"
+            required
+            autofocus
+          />
+          <input
+            type="submit"
+            id="submit"
+            value="Apostar"
+            class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="button"
+            id="again"
+            value="Jogar Novamente"
+            class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md hidden"
+          />
+        </p>
+      </form>
+      <h3 class="mt-6 font-bold">
+        Erro: <span class="mt-6 font-bold text-blue-500" id="outError"></span>
+      </h3>
+      <h3 class="mt-6 font-bold">
+        Chances:
+        <span class="mt-6 font-bold text-blue-500" id="outChances">Você terá 6 tentativas</span>
+      </h3>
+      <h3 class="mt-6 font-bold italic" id="outTip">
+        Dica 1: É um número entre 1 a 100. </br>
+        Dica 2: Use a pesquisa binária
+      </h3>
+      <pre class="mt-6 font-bold" id="patients"></pre>
+    </section>
     <script src="./src/assets/js/index.js"></script>
   </body>
 </html>

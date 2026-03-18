@@ -18,8 +18,7 @@ cineFrm.addEventListener("submit", (e) => {
 });
 
 cineFrm.addEventListener("reset", (e) => {
-  cineResph3.innerText = "";
-  cineResph4.innerText = "";
+  cineResph3.innerText = cineResph4.innerText = "";
 });
 
 // JS Vehicle Resale Program - Eg_2.9.b
@@ -43,9 +42,10 @@ carFrm.addEventListener("submit", (e) => {
 });
 
 carFrm.addEventListener("reset", (e) => {
-  carVehiclesName.innerText = "";
-  carInputPrice.innerText = "";
-  carInstallmentPrice.innerText = "";
+  carVehiclesName.innerText =
+    carInputPrice.innerText =
+    carInstallmentPrice.innerText =
+      "";
 });
 
 // JS Restaurant Program - Eg_2.9.c
@@ -82,8 +82,7 @@ drugFrm.addEventListener("submit", (e) => {
 });
 
 drugFrm.addEventListener("reset", (e) => {
-  drugRespNameProduct.innerText = "";
-  drugRespDiscountProduct.innerText = "";
+  drugRespNameProduct.innerText = drugRespDiscountProduct.innerText = "";
 });
 
 // PLan House JS Program- Eg_2.10.b
@@ -142,8 +141,7 @@ studentFrm.addEventListener("submit", (e) => {
 });
 
 studentFrm.addEventListener("reset", (e) => {
-  studentResph3.innerText = "";
-  studentResph4.innerText = "";
+  studentResph3.innerText = studentResph4.innerText = "";
 });
 
 // Ideal Weight Calculation Program - Eg_4.2
@@ -242,9 +240,7 @@ atmFrm.addEventListener("submit", (e) => {
 });
 
 atmFrm.addEventListener("reset", (e) => {
-  atmResp100.innerText = "";
-  atmResp50.innerText = "";
-  atmResp10.innerText = "";
+  atmResp100.innerText = atmResp50.innerText = atmResp10.innerText = "";
 });
 
 // Parking Meter Program - Eg_4.8.c
@@ -273,8 +269,7 @@ parkingFrm.addEventListener("submit", (e) => {
 });
 
 parkingFrm.addEventListener("reset", (e) => {
-  parkingTime.innerText = "";
-  parkingChange.innerText = "";
+  parkingTime.innerText = parkingChange.innerText = "";
 });
 
 // Program for the Sides of a Triangle - Eg_4.8.d
@@ -303,8 +298,7 @@ triangleFrm.addEventListener("submit", (e) => {
 });
 
 triangleFrm.addEventListener("reset", (e) => {
-  triangleResp.innerText = "";
-  triangleType.innerText = "";
+  triangleResp.innerText = triangleType.innerText = "";
 });
 
 // Chapter05
@@ -397,8 +391,7 @@ billFrm.addEventListener("submit", (e) => {
 });
 
 billFrm.addEventListener("reset", (e) => {
-  billResp1.innerText = "";
-  billResp2.innerText = "";
+  billResp1.innerText = billResp2.innerText = "";
 });
 
 // Prime Numbers Program - Eg_5.6
@@ -542,4 +535,154 @@ petFrm.addEventListener("submit", (e) => {
 
 petFrm.addEventListener("reset", (e) => {
   petResp.innerText = "";
+});
+
+// Perfect Numbers Program - Eg_5.8.c
+// Program must be read a number and check if it is perfect
+// A perfect number has the sum of its integer divisors, except itself.
+
+const pnFrm = document.querySelector(".perfectNumber form");
+const pnDivisors = document.querySelector(".perfectNumber #divisors");
+const pnResp = document.querySelector(".perfectNumber #resp");
+
+let sumDivisors = 0;
+let divisors = [];
+
+pnFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const checkNumber = Number(pnFrm.inputNumber.value);
+  for (let i = 1; i < checkNumber; i++) {
+    if (checkNumber % i == 0) {
+      sumDivisors += i;
+      divisors.push(i);
+    }
+  }
+  if (sumDivisors == checkNumber) {
+    pnDivisors.innerText = `Divisores de ${checkNumber}: ${divisors} (Soma: ${sumDivisors})`;
+    pnResp.innerText = `${checkNumber} É um Número Perfeito`;
+  } else {
+    pnResp.innerText = `${checkNumber} Não É um Número Perfeito`;
+  }
+});
+
+pnFrm.addEventListener("reset", (e) => {
+  pnFrm.reset();
+  pnDivisors.innerText = pnResp.innerText = "";
+});
+
+// Dental Office Program - Eg_6.3
+const dentalFrm = document.querySelector(".dental form");
+const dentalUrgent = document.querySelector(".dental #urgent");
+const dentalTreat = document.querySelector(".dental #treat");
+const dentalGaveUp = document.querySelector(".dental #gave-up");
+const dentalName = document.querySelector(".dental h3 span");
+const dentalPatients = document.querySelector(".dental #patients");
+const patients = [];
+
+// Add Patient
+dentalFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const patient = dentalFrm.patient.value;
+
+  patients.push(patient);
+  let list = "";
+  for (let i = 0; i < patients.length; i++) {
+    list += `${i + 1}. ${patients[i]}\n`;
+  }
+  dentalPatients.innerText = list;
+  dentalFrm.reset();
+  dentalFrm.patient.focus();
+});
+
+//Add Urgent Patient
+dentalUrgent.addEventListener("click", () => {
+  const patient = dentalFrm.patient.value;
+
+  if (!dentalFrm.checkValidity()) {
+    alert("Informe o nome do paciente a ser atendido em caráter de Urgência");
+    dentalFrm.patient.focus();
+    return;
+  }
+
+  patients.unshift(patient);
+  let list = "";
+
+  patients.forEach((patient, i) => (list += `${i + 1}. ${patient}\n`));
+  dentalPatients.innerText = list;
+  dentalFrm.reset();
+  dentalFrm.patient.focus();
+});
+
+//Announces patient in the examination room
+dentalTreat.addEventListener("click", () => {
+  const patientTreat = patients.shift();
+  dentalName.innerText = patientTreat;
+
+  let list = "";
+  patients.forEach((patient, i) => (list += `${i + 1}. ${patient}\n`));
+  dentalPatients.innerText = list;
+  dentalFrm.reset();
+  dentalFrm.patient.focus();
+});
+
+//Remove Pacient
+dentalGaveUp.addEventListener("click", () => {
+  const patient = dentalFrm.patient.value;
+  const patientGaveUp = patients.indexOf(patient);
+  let list = "";
+  patients.splice(patientGaveUp, 1);
+
+  patients.forEach((patient, i) => (list += `${i + 1}. ${patient}\n`));
+  dentalPatients.innerText = list;
+  dentalFrm.reset();
+  dentalFrm.patient.focus();
+});
+
+// Guess the Number Game - Eg_6.4
+const guessNumberFrm = document.querySelector(".guessNumber form");
+const guessNumberError = document.querySelector(".guessNumber #outError");
+const guessNumberChances = document.querySelector(".guessNumber #outChances");
+const guessNumberTip = document.querySelector(".guessNumber #outTip");
+const guessNumberAgain = document.querySelector(".guessNumber #again");
+
+const chances = 6;
+const errors = [];
+const drawn = Math.floor(Math.random() * 100) + 1;
+
+guessNumberFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const number = Number(guessNumberFrm.number.value);
+
+  if (number == drawn) {
+    guessNumberTip.innerText = `Parabéns! Número sorteado: ${drawn}`;
+    // guessNumberFrm.btSubmit.disabled = true;
+    guessNumberFrm.submit.classList.toggle("hidden");
+    guessNumberFrm.again.classList.toggle("hidden");
+  } else {
+    if (errors.includes(number)) {
+      alert(`O número ${number} já foi apostado, tente outro número`);
+    } else {
+      errors.push(number);
+      const qtErrors = errors.length;
+      guessNumberError.innerText = `${qtErrors} erros. Números apostados ${errors.join(", ")}`;
+      const qtChances = chances - qtErrors;
+      guessNumberChances.innerText = qtChances;
+      if (qtChances == 0) {
+        alert("Suas chances acabaram...");
+        // guessNumberFrm.btSubmit.disabled = true;
+        guessNumberFrm.submit.classList.toggle("hidden");
+        guessNumberFrm.again.classList.toggle("hidden");
+        guessNumberTip.innerText = `Game Over. O número sorteado era ${drawn}`;
+      } else {
+        const tip = number < drawn ? "maior" : "menor";
+        guessNumberTip.innerHTML = `Dica: Tente um número ${tip} que o ${number}`;
+      }
+    }
+  }
+  guessNumberFrm.reset();
+  guessNumberFrm.number.focus();
+});
+
+guessNumberAgain.addEventListener("click", () => {
+  location.reload();
 });
