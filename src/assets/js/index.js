@@ -1,9 +1,17 @@
+import { qs, qsChild, currencyFormat } from "./helper.js";
+
 // Chapter04
 
 // Cine JS Program - Now Playing - Eg_2.9
-const cineFrm = document.querySelector(".cine form");
-const cineResph3 = document.querySelector(".cine h3");
-const cineResph4 = document.querySelector(".cine h4");
+const cine = qs(".cine");
+
+const cineSelectors = {
+  cineFrm: qsChild("form", cine),
+  cineResph3: qsChild("h3", cine),
+  cineResph4: qsChild("h4", cine),
+};
+
+const { cineFrm, cineResph3, cineResph4 } = cineSelectors;
 
 cineFrm.addEventListener("submit", (e) => {
   const nameMovie = cineFrm.movie.value;
@@ -22,10 +30,17 @@ cineFrm.addEventListener("reset", (e) => {
 });
 
 // JS Vehicle Resale Program - Eg_2.9.b
-const carFrm = document.querySelector(".car form");
-const carVehiclesName = document.querySelector(".car h3");
-const carInputPrice = document.querySelector(".car #inputPrice");
-const carInstallmentPrice = document.querySelector(".car #installmentPrice");
+const car = qs(".car");
+
+const carSelectors = {
+  carFrm: qsChild("form", car),
+  carVehiclesName: qsChild("h3", car),
+  carInstallmentPrice: qsChild("#installmentPrice", car),
+  carInputPrice: qsChild(" #inputPrice", car),
+};
+
+const { carFrm, carVehiclesName, carInstallmentPrice, carInputPrice } =
+  carSelectors;
 
 carFrm.addEventListener("submit", (e) => {
   const nameInput = carFrm.vehicles.value;
@@ -35,8 +50,8 @@ carFrm.addEventListener("submit", (e) => {
   const parcelValue = (priceValue - halfPrice) / 12;
 
   carVehiclesName.innerText = `Promoção: ${nameInput}`;
-  carInputPrice.innerText = `Entrada de R$ ${halfPrice.toFixed(2)}`;
-  carInstallmentPrice.innerText = `+12x R$ ${parcelValue.toFixed(2)}`;
+  carInputPrice.innerText = `Entrada de R$ ${currencyFormat(halfPrice)}`;
+  carInstallmentPrice.innerText = `+12x R$ ${currencyFormat(parcelValue)}`;
 
   e.preventDefault();
 });
@@ -49,15 +64,21 @@ carFrm.addEventListener("reset", (e) => {
 });
 
 // JS Restaurant Program - Eg_2.9.c
-const restaurantFrm = document.querySelector(".restaurant form");
-const restaurantResp = document.querySelector(".restaurant h3");
+const restaurant = qs(".restaurant");
+
+const restaurantSelectors = {
+  restaurantFrm: qsChild("form", restaurant),
+  restaurantResp: qsChild("h3", restaurant),
+};
+
+const { restaurantFrm, restaurantResp } = restaurantSelectors;
 
 restaurantFrm.addEventListener("submit", (e) => {
   const priceFood = Number(restaurantFrm.price.value);
   const amountFood = Number(restaurantFrm.amount.value);
   const priceTotal = (priceFood * amountFood) / 1000;
 
-  restaurantResp.innerText = `Valor a pagar R$ ${priceTotal.toFixed(2)}`;
+  restaurantResp.innerText = `Valor a pagar R$ ${currencyFormat(priceTotal)}`;
 
   e.preventDefault();
 });
@@ -67,17 +88,22 @@ restaurantFrm.addEventListener("reset", (e) => {
 });
 
 // Pharmacy Program JS - Eg_2.10.a
-const drugFrm = document.querySelector(".drug form");
-const drugRespNameProduct = document.querySelector(".drug #nameProduct");
-const drugRespDiscountProduct = document.querySelector(
-  ".drug #discountProduct",
-);
+
+const drug = qs(".drug");
+
+const drugSelectors = {
+  drugFrm: qsChild("form", drug),
+  drugRespNameProduct: qsChild("#nameProduct", drug),
+  drugRespDiscountProduct: qsChild("#discountProduct", drug),
+};
+
+const { drugFrm, drugRespNameProduct, drugRespDiscountProduct } = drugSelectors;
 
 drugFrm.addEventListener("submit", (e) => {
   const priceFinal = Math.floor(drugFrm.amount.value * 2);
   const inputName = drugFrm.product.value;
   drugRespNameProduct.innerText = `Promoção de ${inputName}`;
-  drugRespDiscountProduct.innerText = `Leve 2 por apenas R$ ${priceFinal.toFixed(2)}`;
+  drugRespDiscountProduct.innerText = `Leve 2 por apenas R$ ${currencyFormat(priceFinal)}`;
   e.preventDefault();
 });
 
@@ -86,15 +112,21 @@ drugFrm.addEventListener("reset", (e) => {
 });
 
 // PLan House JS Program- Eg_2.10.b
-const lanFrm = document.querySelector(".lan form");
-const lanResp = document.querySelector(".lan h3");
+const lan = qs(".lan");
+
+const lanSelectors = {
+  lanFrm: qsChild("form", lan),
+  lanResp: qsChild("h3", lan),
+};
+
+const { lanFrm, lanResp } = lanSelectors;
 
 lanFrm.addEventListener("submit", (e) => {
   const time = Math.ceil(Number(lanFrm.time.value) / 15);
   const price = Number(lanFrm.amount.value);
 
   const totalPrice = time * price;
-  lanResp.innerText = `Valor total á Pagar: R$ ${totalPrice.toFixed(2)}`;
+  lanResp.innerText = `Valor total á Pagar: R$ ${currencyFormat(totalPrice)}`;
   e.preventDefault();
 });
 
@@ -103,15 +135,22 @@ lanFrm.addEventListener("reset", (e) => {
 });
 
 // JS Supermarket Program - Eg_2.10.c
-const marketFrm = document.querySelector(".market form");
-const marketRespOffer = document.querySelector(".market h3");
+
+const market = qs(".market");
+
+const marketSelectors = {
+  marketFrm: qsChild("form", market),
+  marketRespOffer: qsChild("h3", market),
+};
+
+const { marketFrm, marketRespOffer } = marketSelectors;
 
 marketFrm.addEventListener("submit", (e) => {
   const nameProduct = marketFrm.product.value;
   const priceProduct = Number(marketFrm.price.value);
   const offer = priceProduct * 2 + priceProduct / 2;
 
-  marketRespOffer.innerText = `Leve 3 ${nameProduct} e pague somente R$ ${offer.toFixed(2)}`;
+  marketRespOffer.innerText = `Leve 3 ${nameProduct} e pague somente R$ ${currencyFormat(offer)}`;
   e.preventDefault();
 });
 
@@ -120,9 +159,15 @@ marketFrm.addEventListener("reset", (e) => {
 });
 
 // Student Status Program - Eg_4.1
-const studentFrm = document.querySelector(".student form");
-const studentResph3 = document.querySelector(".student h3");
-const studentResph4 = document.querySelector(".student h4");
+const student = qs(".student");
+
+const studentSelectors = {
+  studentFrm: qsChild("form", student),
+  studentResph3: qsChild("h3", student),
+  studentResph4: qsChild("h4", student),
+};
+
+const { studentFrm, studentResph3, studentResph4 } = studentSelectors;
 
 studentFrm.addEventListener("submit", (e) => {
   const name = studentFrm.studentName.value;
@@ -145,8 +190,14 @@ studentFrm.addEventListener("reset", (e) => {
 });
 
 // Ideal Weight Calculation Program - Eg_4.2
-const weightFrm = document.querySelector(".weight form");
-const weightResph3 = document.querySelector(".weight h3");
+const weight = qs(".weight");
+
+const weightSelectors = {
+  weightFrm: qsChild("form", weight),
+  weightResph3: qsChild("h3", weight),
+};
+
+const { weightFrm, weightResph3 } = weightSelectors;
 
 weightFrm.addEventListener("submit", (e) => {
   const nome = weightFrm.name.value;
@@ -173,8 +224,14 @@ weightFrm.addEventListener("reset", (e) => {
 });
 
 // Time Zone Program - Eg_4.6.a
-const timeZoneFrm = document.querySelector(".timeZone form");
-const timeZoneRespH3 = document.querySelector(".timeZone h3");
+const timeZone = qs(".timeZone");
+
+const timeZoneSelectors = {
+  timeZoneFrm: qsChild("form", timeZone),
+  timeZoneRespH3: qsChild("h3", timeZone),
+};
+
+const { timeZoneFrm, timeZoneRespH3 } = timeZoneSelectors;
 
 timeZoneFrm.addEventListener("submit", (e) => {
   const time = Number(timeZoneFrm.time.value);
@@ -189,8 +246,14 @@ timeZoneFrm.addEventListener("reset", (e) => {
 });
 
 // Square Root Program - Eg_4.6.b
-const sqrtFrm = document.querySelector(".sqrt form");
-const sqrtRespH3 = document.querySelector(".sqrt h3");
+const sqrt = qs(".sqrt");
+
+const sqrtSelectors = {
+  sqrtFrm: qsChild("form", sqrt),
+  sqrtRespH3: qsChild("h3", sqrt),
+};
+
+const { sqrtFrm, sqrtRespH3 } = sqrtSelectors;
 
 sqrtFrm.addEventListener("submit", (e) => {
   const number = Number(sqrtFrm.number.value);
@@ -207,10 +270,16 @@ sqrtFrm.addEventListener("reset", (e) => {
 });
 
 // ATM Program - Eg_4.6.c
-const atmFrm = document.querySelector(".atm form");
-const atmResp100 = document.querySelector(".atm #note100");
-const atmResp50 = document.querySelector(".atm #note50");
-const atmResp10 = document.querySelector(".atm #note10");
+const atm = qs(".atm");
+
+const atmSelectors = {
+  atmFrm: qsChild("form", atm),
+  atmResp100: qsChild("#note100", atm),
+  atmResp50: qsChild("#note50", atm),
+  atmResp10: qsChild("#note10", atm),
+};
+
+const { atmFrm, atmResp10, atmResp50, atmResp100 } = atmSelectors;
 
 atmFrm.addEventListener("submit", (e) => {
   const value = Number(atmFrm.withdraw.value);
@@ -244,9 +313,15 @@ atmFrm.addEventListener("reset", (e) => {
 });
 
 // Parking Meter Program - Eg_4.8.c
-const parkingFrm = document.querySelector(".parking form");
-const parkingTime = document.querySelector(".parking #time");
-const parkingChange = document.querySelector(".parking #change");
+const parking = qs(".parking");
+
+const parkingSelectors = {
+  parkingFrm: qsChild("form", parking),
+  parkingTime: qsChild("#time", parking),
+  parkingChange: qsChild("#change", parking),
+};
+
+const { parkingFrm, parkingTime, parkingChange } = parkingSelectors;
 
 parkingFrm.addEventListener("submit", (e) => {
   const value = Number(parkingFrm.payment.value);
@@ -273,9 +348,15 @@ parkingFrm.addEventListener("reset", (e) => {
 });
 
 // Program for the Sides of a Triangle - Eg_4.8.d
-const triangleFrm = document.querySelector(".triangle form");
-const triangleResp = document.querySelector(".triangle #resp");
-const triangleType = document.querySelector(".triangle #type");
+const triangle = qs(".triangle");
+
+const triangleSelectors = {
+  triangleFrm: qsChild("form", triangle),
+  triangleResp: qsChild("#resp", triangle),
+  triangleType: qsChild("#type", triangle),
+};
+
+const { triangleFrm, triangleResp, triangleType } = triangleSelectors;
 
 triangleFrm.addEventListener("submit", (e) => {
   const sideA = Number(triangleFrm.sideA.value);
@@ -304,8 +385,14 @@ triangleFrm.addEventListener("reset", (e) => {
 // Chapter05
 
 // Multiplication Table Program - Eg_5.1
-const tabuadaFrm = document.querySelector(".multiplication-table form");
-const tabuadaResp = document.querySelector(".multiplication-table pre");
+const tabuada = qs(".multiplication-table");
+
+const tabuadaSelectors = {
+  tabuadaFrm: qsChild("form", tabuada),
+  tabuadaResp: qsChild("pre", tabuada),
+};
+
+const { tabuadaFrm, tabuadaResp } = tabuadaSelectors;
 
 tabuadaFrm.addEventListener("submit", (e) => {
   const value = Number(tabuadaFrm.numberInput.value);
@@ -322,8 +409,14 @@ tabuadaFrm.addEventListener("reset", (e) => {
 });
 
 // Decreasing Program - Eg_5.2
-const decrescentFrm = document.querySelector(".decrescent form");
-const decrescentResp = document.querySelector(".decrescent pre");
+const decrescent = qs(".decrescent");
+
+const decrescentSelectors = {
+  decrescentFrm: qsChild("form", decrescent),
+  decrescentResp: qsChild("pre", decrescent),
+};
+
+const { decrescentFrm, decrescentResp } = decrescentSelectors;
 
 decrescentFrm.addEventListener("submit", (e) => {
   const value = Number(decrescentFrm.numberInput.value);
@@ -344,7 +437,7 @@ decrescentFrm.addEventListener("reset", (e) => {
 });
 
 // Breaks in Ties - Eg_5.3
-const startTest = document.querySelector(".break_continue button");
+const startTest = qs(".break_continue button");
 
 startTest.addEventListener("click", (e) => {
   alert("Digite 0 para sair");
@@ -367,9 +460,15 @@ startTest.addEventListener("click", (e) => {
 });
 
 // Monthly Accounts Program in Laços - Eg_5.5
-const billFrm = document.querySelector(".bill_month form");
-const billResp1 = document.querySelector(".bill_month #resp1");
-const billResp2 = document.querySelector(".bill_month #resp2");
+const bill = qs(".bill_month");
+
+const billSelectors = {
+  billFrm: qsChild("form", bill),
+  billResp1: qsChild("#resp1", bill),
+  billResp2: qsChild("#resp2", bill),
+};
+
+const { billFrm, billResp1, billResp2 } = billSelectors;
 
 let totalAmount = 0; // Declarado como variável global, pois após submite a memória interna retorna forma zera.
 let countBill = 0; // Declarado como variável global, pois após submite a memória interna retorna forma zera.
@@ -395,8 +494,14 @@ billFrm.addEventListener("reset", (e) => {
 });
 
 // Prime Numbers Program - Eg_5.6
-const primeFrm = document.querySelector(".primes form");
-const primeResp = document.querySelector(".primes h3");
+const prime = qs(".primes");
+
+const primeSelectors = {
+  primeFrm: qsChild("form", prime),
+  primeResp: qsChild("h3", prime),
+};
+
+const { primeFrm, primeResp } = primeSelectors;
 
 primeFrm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -438,8 +543,14 @@ primeFrm.addEventListener("reset", (e) => {
 });
 
 // Star Factory Machine - Eg_5.7
-const starFrm = document.querySelector(".star form");
-const starResp = document.querySelector(".star h3");
+const star = qs(".star");
+
+const starSelectors = {
+  starFrm: qsChild("form", star),
+  starResp: qsChild("h3", star),
+};
+
+const { starFrm, starResp } = starSelectors;
 
 starFrm.addEventListener("submit", (e) => {
   const amount = Number(starFrm.number.value);
@@ -460,8 +571,14 @@ starFrm.addEventListener("reset", (e) => {
 });
 
 // World Cup Program - Eg_5.8
-const worldCupFrm = document.querySelector(".worldCup form");
-const worldCupResp = document.querySelector(".worldCup h3");
+const worldCup = qs(".worldCup");
+
+const worldSelectors = {
+  worldCupFrm: qsChild("form", worldCup),
+  worldCupResp: qsChild("h3", worldCup),
+};
+
+const { worldCupFrm, worldCupResp } = worldSelectors;
 
 worldCupFrm.addEventListener("submit", (e) => {
   const year = Number(worldCupFrm.year.value);
@@ -484,8 +601,14 @@ worldCupFrm.addEventListener("reset", (e) => {
 });
 
 // Repeat Fruit Program - Eg_5.8.a
-const fruitFrm = document.querySelector(".fruits form");
-const fruitResp = document.querySelector(".fruits h3");
+const fruits = qs(".fruits");
+
+const fruitSelectors = {
+  fruitFrm: qsChild("form", fruits),
+  fruitResp: qsChild("h3", fruits),
+};
+
+const { fruitFrm, fruitResp } = fruitSelectors;
 
 fruitFrm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -494,7 +617,7 @@ fruitFrm.addEventListener("submit", (e) => {
   let resp = `${name}`;
 
   for (let i = 1; i < times; i++) {
-    fruitResp.innerText += `${resp.padStart(5)} *`;
+    fruitResp.innerText += `${resp.padStart(5)} * `;
   }
   fruitResp.innerText += `${resp.padStart(5)}`;
 });
@@ -506,9 +629,14 @@ fruitFrm.addEventListener("reset", (e) => {
 // Chinchilla Breeding Program - Eg_5.8.b
 // The initial number from amount must be equal or greater than 2
 // Each year, chincillas will be triplicate
+const pet = qs(".pet");
 
-const petFrm = document.querySelector(".pet form");
-const petResp = document.querySelector(".pet pre");
+const petSelectors = {
+  petFrm: qsChild("form", pet),
+  petResp: qsChild("pre", pet),
+};
+
+const { petFrm, petResp } = petSelectors;
 
 petFrm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -540,16 +668,20 @@ petFrm.addEventListener("reset", (e) => {
 // Perfect Numbers Program - Eg_5.8.c
 // Program must be read a number and check if it is perfect
 // A perfect number has the sum of its integer divisors, except itself.
+const perfectNumber = qs(".perfectNumber");
 
-const pnFrm = document.querySelector(".perfectNumber form");
-const pnDivisors = document.querySelector(".perfectNumber #divisors");
-const pnResp = document.querySelector(".perfectNumber #resp");
+const pnSelectors = {
+  pnFrm: qsChild("form", perfectNumber),
+  pnDivisors: qsChild("#divisors", perfectNumber),
+  pnResp: qsChild("#resp", perfectNumber),
+};
 
-let sumDivisors = 0;
-let divisors = [];
+const { pnFrm, pnDivisors, pnResp } = pnSelectors;
 
 pnFrm.addEventListener("submit", (e) => {
   e.preventDefault();
+  let sumDivisors = 0;
+  let divisors = [];
   const checkNumber = Number(pnFrm.inputNumber.value);
   for (let i = 1; i < checkNumber; i++) {
     if (checkNumber % i == 0) {
@@ -563,6 +695,7 @@ pnFrm.addEventListener("submit", (e) => {
   } else {
     pnResp.innerText = `${checkNumber} Não É um Número Perfeito`;
   }
+  checkNumber.value = "";
 });
 
 pnFrm.addEventListener("reset", (e) => {
@@ -571,12 +704,26 @@ pnFrm.addEventListener("reset", (e) => {
 });
 
 // Dental Office Program - Eg_6.3
-const dentalFrm = document.querySelector(".dental form");
-const dentalUrgent = document.querySelector(".dental #urgent");
-const dentalTreat = document.querySelector(".dental #treat");
-const dentalGaveUp = document.querySelector(".dental #gave-up");
-const dentalName = document.querySelector(".dental h3 span");
-const dentalPatients = document.querySelector(".dental #patients");
+const dental = qs(".dental");
+
+const dentalSelectors = {
+  dentalFrm: qsChild("form", dental),
+  dentalUrgent: qsChild("#urgent", dental),
+  dentalTreat: qsChild("#treat", dental),
+  dentalGaveUp: qsChild("#gave-up", dental),
+  dentalName: qsChild("h3 span", dental),
+  dentalPatients: qsChild("#patients", dental),
+};
+
+const {
+  dentalFrm,
+  dentalUrgent,
+  dentalTreat,
+  dentalGaveUp,
+  dentalName,
+  dentalPatients,
+} = dentalSelectors;
+
 const patients = [];
 
 // Add Patient
@@ -627,7 +774,7 @@ dentalTreat.addEventListener("click", () => {
 
 //Remove Pacient
 dentalGaveUp.addEventListener("click", () => {
-  const patient = dentalFrm.patient.value;
+  const patient = prompt("Digite o nome do paciente que Desistiu");
   const patientGaveUp = patients.indexOf(patient);
   let list = "";
   patients.splice(patientGaveUp, 1);
@@ -639,11 +786,23 @@ dentalGaveUp.addEventListener("click", () => {
 });
 
 // Guess the Number Game - Eg_6.4
-const guessNumberFrm = document.querySelector(".guessNumber form");
-const guessNumberError = document.querySelector(".guessNumber #outError");
-const guessNumberChances = document.querySelector(".guessNumber #outChances");
-const guessNumberTip = document.querySelector(".guessNumber #outTip");
-const guessNumberAgain = document.querySelector(".guessNumber #again");
+const guessNumber = qs(".guessNumber");
+
+const guessNumberSelectors = {
+  guessNumberFrm: qsChild("form", guessNumber),
+  guessNumberError: qsChild("#outError", guessNumber),
+  guessNumberChances: qsChild("#outChances", guessNumber),
+  guessNumberTip: qsChild("#outTip", guessNumber),
+  guessNumberAgain: qsChild("#again", guessNumber),
+};
+
+const {
+  guessNumberFrm,
+  guessNumberError,
+  guessNumberChances,
+  guessNumberTip,
+  guessNumberAgain,
+} = guessNumberSelectors;
 
 const chances = 6;
 const errors = [];
@@ -685,4 +844,66 @@ guessNumberFrm.addEventListener("submit", (e) => {
 
 guessNumberAgain.addEventListener("click", () => {
   location.reload();
+});
+
+// Herbie Rescale - Eg_6.8
+const resale = qs(".resale");
+
+const resaleSelectors = {
+  resaleFrm: qsChild("form", resale),
+  resaleList: qsChild("#list", resale),
+  resaleFilter: qsChild("#filter", resale),
+  resaleSimulate: qsChild("#simulate", resale),
+  resaleResp: qsChild("pre", resale),
+};
+
+const { resaleFrm, resaleList, resaleFilter, resaleSimulate, resaleResp } =
+  resaleSelectors;
+
+const listCar = [];
+
+resaleFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const { car, price } = resaleFrm;
+  const modelCar = car.value;
+  const priceCar = Number(price.value);
+  listCar.push({ name: modelCar, price: priceCar });
+  console.log(listCar);
+  resaleFrm.list.dispatchEvent(new Event("click"));
+  resaleFrm.reset();
+});
+
+resaleList.addEventListener("click", () => {
+  if (listCar.length == 0) {
+    alert("Não há carros cadastrados");
+    return;
+  }
+  const list = listCar.reduce(
+    (accumulator, car) =>
+      accumulator + car.name + " - R$: " + currencyFormat(car.price) + "\n",
+    "",
+  );
+  resaleResp.innerText = `Lista dos Carros Cadastrados\n${"-".repeat(40)}\n${list}`;
+});
+
+resaleFilter.addEventListener("click", () => {
+  const priceOffer = Number(
+    prompt("Qual o valor máximo que o cliente deseja pagar?"),
+  );
+  // console.log(priceOffer);
+
+  const filterList = listCar.filter((car) => car.price <= priceOffer);
+
+  if (filterList.length == 0) {
+    alert(`Não há carros com preço inferior ou igual as ${priceOffer}`);
+    return;
+  }
+
+  let list = "";
+
+  for (const car of filterList) {
+    const { name, price } = car;
+    list += `${name} - R$: ${currencyFormat(price)}\n`;
+  }
+  resaleResp.innerText = `Carros até R$: ${currencyFormat(priceOffer)}\n${"-".repeat(40)}\n${list}`;
 });
