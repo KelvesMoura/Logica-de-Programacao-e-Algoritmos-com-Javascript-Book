@@ -1,14 +1,14 @@
-import { qs, qsChild, currencyFormat } from "./helper.js";
+import * as h from "./helper.js";
 
 // Chapter04
 
 // Cine JS Program - Now Playing - Eg_2.9
-const cine = qs(".cine");
+const cine = h.qs(".cine");
 
 const cineSelectors = {
-  cineFrm: qsChild("form", cine),
-  cineResph3: qsChild("h3", cine),
-  cineResph4: qsChild("h4", cine),
+  cineFrm: h.qsChild("form", cine),
+  cineResph3: h.qsChild("h3", cine),
+  cineResph4: h.qsChild("h4", cine),
 };
 
 const { cineFrm, cineResph3, cineResph4 } = cineSelectors;
@@ -30,13 +30,13 @@ cineFrm.addEventListener("reset", (e) => {
 });
 
 // JS Vehicle Resale Program - Eg_2.9.b
-const car = qs(".car");
+const car = h.qs(".car");
 
 const carSelectors = {
-  carFrm: qsChild("form", car),
-  carVehiclesName: qsChild("h3", car),
-  carInstallmentPrice: qsChild("#installmentPrice", car),
-  carInputPrice: qsChild(" #inputPrice", car),
+  carFrm: h.qsChild("form", car),
+  carVehiclesName: h.qsChild("h3", car),
+  carInstallmentPrice: h.qsChild("#installmentPrice", car),
+  carInputPrice: h.qsChild(" #inputPrice", car),
 };
 
 const { carFrm, carVehiclesName, carInstallmentPrice, carInputPrice } =
@@ -64,11 +64,11 @@ carFrm.addEventListener("reset", (e) => {
 });
 
 // JS Restaurant Program - Eg_2.9.c
-const restaurant = qs(".restaurant");
+const restaurant = h.qs(".restaurant");
 
 const restaurantSelectors = {
-  restaurantFrm: qsChild("form", restaurant),
-  restaurantResp: qsChild("h3", restaurant),
+  restaurantFrm: h.qsChild("form", restaurant),
+  restaurantResp: h.qsChild("h3", restaurant),
 };
 
 const { restaurantFrm, restaurantResp } = restaurantSelectors;
@@ -89,12 +89,12 @@ restaurantFrm.addEventListener("reset", (e) => {
 
 // Pharmacy Program JS - Eg_2.10.a
 
-const drug = qs(".drug");
+const drug = h.qs(".drug");
 
 const drugSelectors = {
-  drugFrm: qsChild("form", drug),
-  drugRespNameProduct: qsChild("#nameProduct", drug),
-  drugRespDiscountProduct: qsChild("#discountProduct", drug),
+  drugFrm: h.qsChild("form", drug),
+  drugRespNameProduct: h.qsChild("#nameProduct", drug),
+  drugRespDiscountProduct: h.qsChild("#discountProduct", drug),
 };
 
 const { drugFrm, drugRespNameProduct, drugRespDiscountProduct } = drugSelectors;
@@ -112,11 +112,11 @@ drugFrm.addEventListener("reset", (e) => {
 });
 
 // PLan House JS Program- Eg_2.10.b
-const lan = qs(".lan");
+const lan = h.qs(".lan");
 
 const lanSelectors = {
-  lanFrm: qsChild("form", lan),
-  lanResp: qsChild("h3", lan),
+  lanFrm: h.qsChild("form", lan),
+  lanResp: h.qsChild("h3", lan),
 };
 
 const { lanFrm, lanResp } = lanSelectors;
@@ -136,11 +136,11 @@ lanFrm.addEventListener("reset", (e) => {
 
 // JS Supermarket Program - Eg_2.10.c
 
-const market = qs(".market");
+const market = h.qs(".market");
 
 const marketSelectors = {
-  marketFrm: qsChild("form", market),
-  marketRespOffer: qsChild("h3", market),
+  marketFrm: h.qsChild("form", market),
+  marketRespOffer: h.qsChild("h3", market),
 };
 
 const { marketFrm, marketRespOffer } = marketSelectors;
@@ -159,12 +159,12 @@ marketFrm.addEventListener("reset", (e) => {
 });
 
 // Student Status Program - Eg_4.1
-const student = qs(".student");
+const student = h.qs(".student");
 
 const studentSelectors = {
-  studentFrm: qsChild("form", student),
-  studentResph3: qsChild("h3", student),
-  studentResph4: qsChild("h4", student),
+  studentFrm: h.qsChild("form", student),
+  studentResph3: h.qsChild("h3", student),
+  studentResph4: h.qsChild("h4", student),
 };
 
 const { studentFrm, studentResph3, studentResph4 } = studentSelectors;
@@ -173,9 +173,9 @@ studentFrm.addEventListener("submit", (e) => {
   const name = studentFrm.studentName.value;
   const firstGrade = Number(studentFrm.firstGrade.value);
   const secondGrade = Number(studentFrm.secondGrade.value);
-  const averageGrade = (firstGrade + secondGrade) / 2;
-  studentResph3.innerText = `Média das Notas: ${averageGrade.toFixed(1)}`;
-  if (averageGrade >= 7) {
+  const avertoyGrade = (firstGrade + secondGrade) / 2;
+  studentResph3.innerText = `Média das Notas: ${avertoyGrade.toFixed(1)}`;
+  if (avertoyGrade >= 7) {
     studentResph4.innerText = `Parabéns ${name}! Você foi aprovado`;
     studentResph4.classList.add("text-green-600");
   } else {
@@ -190,11 +190,11 @@ studentFrm.addEventListener("reset", (e) => {
 });
 
 // Ideal Weight Calculation Program - Eg_4.2
-const weight = qs(".weight");
+const weight = h.qs(".weight");
 
 const weightSelectors = {
-  weightFrm: qsChild("form", weight),
-  weightResph3: qsChild("h3", weight),
+  weightFrm: h.qsChild("form", weight),
+  weightResph3: h.qsChild("h3", weight),
 };
 
 const { weightFrm, weightResph3 } = weightSelectors;
@@ -224,11 +224,11 @@ weightFrm.addEventListener("reset", (e) => {
 });
 
 // Time Zone Program - Eg_4.6.a
-const timeZone = qs(".timeZone");
+const timeZone = h.qs(".timeZone");
 
 const timeZoneSelectors = {
-  timeZoneFrm: qsChild("form", timeZone),
-  timeZoneRespH3: qsChild("h3", timeZone),
+  timeZoneFrm: h.qsChild("form", timeZone),
+  timeZoneRespH3: h.qsChild("h3", timeZone),
 };
 
 const { timeZoneFrm, timeZoneRespH3 } = timeZoneSelectors;
@@ -246,11 +246,11 @@ timeZoneFrm.addEventListener("reset", (e) => {
 });
 
 // Square Root Program - Eg_4.6.b
-const sqrt = qs(".sqrt");
+const sqrt = h.qs(".sqrt");
 
 const sqrtSelectors = {
-  sqrtFrm: qsChild("form", sqrt),
-  sqrtRespH3: qsChild("h3", sqrt),
+  sqrtFrm: h.qsChild("form", sqrt),
+  sqrtRespH3: h.qsChild("h3", sqrt),
 };
 
 const { sqrtFrm, sqrtRespH3 } = sqrtSelectors;
@@ -270,13 +270,13 @@ sqrtFrm.addEventListener("reset", (e) => {
 });
 
 // ATM Program - Eg_4.6.c
-const atm = qs(".atm");
+const atm = h.qs(".atm");
 
 const atmSelectors = {
-  atmFrm: qsChild("form", atm),
-  atmResp100: qsChild("#note100", atm),
-  atmResp50: qsChild("#note50", atm),
-  atmResp10: qsChild("#note10", atm),
+  atmFrm: h.qsChild("form", atm),
+  atmResp100: h.qsChild("#note100", atm),
+  atmResp50: h.qsChild("#note50", atm),
+  atmResp10: h.qsChild("#note10", atm),
 };
 
 const { atmFrm, atmResp10, atmResp50, atmResp100 } = atmSelectors;
@@ -313,12 +313,12 @@ atmFrm.addEventListener("reset", (e) => {
 });
 
 // Parking Meter Program - Eg_4.8.c
-const parking = qs(".parking");
+const parking = h.qs(".parking");
 
 const parkingSelectors = {
-  parkingFrm: qsChild("form", parking),
-  parkingTime: qsChild("#time", parking),
-  parkingChange: qsChild("#change", parking),
+  parkingFrm: h.qsChild("form", parking),
+  parkingTime: h.qsChild("#time", parking),
+  parkingChange: h.qsChild("#change", parking),
 };
 
 const { parkingFrm, parkingTime, parkingChange } = parkingSelectors;
@@ -348,12 +348,12 @@ parkingFrm.addEventListener("reset", (e) => {
 });
 
 // Program for the Sides of a Triangle - Eg_4.8.d
-const triangle = qs(".triangle");
+const triangle = h.qs(".triangle");
 
 const triangleSelectors = {
-  triangleFrm: qsChild("form", triangle),
-  triangleResp: qsChild("#resp", triangle),
-  triangleType: qsChild("#type", triangle),
+  triangleFrm: h.qsChild("form", triangle),
+  triangleResp: h.qsChild("#resp", triangle),
+  triangleType: h.qsChild("#type", triangle),
 };
 
 const { triangleFrm, triangleResp, triangleType } = triangleSelectors;
@@ -385,11 +385,11 @@ triangleFrm.addEventListener("reset", (e) => {
 // Chapter05
 
 // Multiplication Table Program - Eg_5.1
-const tabuada = qs(".multiplication-table");
+const tabuada = h.qs(".multiplication-table");
 
 const tabuadaSelectors = {
-  tabuadaFrm: qsChild("form", tabuada),
-  tabuadaResp: qsChild("pre", tabuada),
+  tabuadaFrm: h.qsChild("form", tabuada),
+  tabuadaResp: h.qsChild("pre", tabuada),
 };
 
 const { tabuadaFrm, tabuadaResp } = tabuadaSelectors;
@@ -409,11 +409,11 @@ tabuadaFrm.addEventListener("reset", (e) => {
 });
 
 // Decreasing Program - Eg_5.2
-const decrescent = qs(".decrescent");
+const decrescent = h.qs(".decrescent");
 
 const decrescentSelectors = {
-  decrescentFrm: qsChild("form", decrescent),
-  decrescentResp: qsChild("pre", decrescent),
+  decrescentFrm: h.qsChild("form", decrescent),
+  decrescentResp: h.qsChild("pre", decrescent),
 };
 
 const { decrescentFrm, decrescentResp } = decrescentSelectors;
@@ -437,7 +437,7 @@ decrescentFrm.addEventListener("reset", (e) => {
 });
 
 // Breaks in Ties - Eg_5.3
-const startTest = qs(".break_continue button");
+const startTest = h.qs(".break_continue button");
 
 startTest.addEventListener("click", (e) => {
   alert("Digite 0 para sair");
@@ -460,12 +460,12 @@ startTest.addEventListener("click", (e) => {
 });
 
 // Monthly Accounts Program in Laços - Eg_5.5
-const bill = qs(".bill_month");
+const bill = h.qs(".bill_month");
 
 const billSelectors = {
-  billFrm: qsChild("form", bill),
-  billResp1: qsChild("#resp1", bill),
-  billResp2: qsChild("#resp2", bill),
+  billFrm: h.qsChild("form", bill),
+  billResp1: h.qsChild("#resp1", bill),
+  billResp2: h.qsChild("#resp2", bill),
 };
 
 const { billFrm, billResp1, billResp2 } = billSelectors;
@@ -494,11 +494,11 @@ billFrm.addEventListener("reset", (e) => {
 });
 
 // Prime Numbers Program - Eg_5.6
-const prime = qs(".primes");
+const prime = h.qs(".primes");
 
 const primeSelectors = {
-  primeFrm: qsChild("form", prime),
-  primeResp: qsChild("h3", prime),
+  primeFrm: h.qsChild("form", prime),
+  primeResp: h.qsChild("h3", prime),
 };
 
 const { primeFrm, primeResp } = primeSelectors;
@@ -543,11 +543,11 @@ primeFrm.addEventListener("reset", (e) => {
 });
 
 // Star Factory Machine - Eg_5.7
-const star = qs(".star");
+const star = h.qs(".star");
 
 const starSelectors = {
-  starFrm: qsChild("form", star),
-  starResp: qsChild("h3", star),
+  starFrm: h.qsChild("form", star),
+  starResp: h.qsChild("h3", star),
 };
 
 const { starFrm, starResp } = starSelectors;
@@ -571,11 +571,11 @@ starFrm.addEventListener("reset", (e) => {
 });
 
 // World Cup Program - Eg_5.8
-const worldCup = qs(".worldCup");
+const worldCup = h.qs(".worldCup");
 
 const worldSelectors = {
-  worldCupFrm: qsChild("form", worldCup),
-  worldCupResp: qsChild("h3", worldCup),
+  worldCupFrm: h.qsChild("form", worldCup),
+  worldCupResp: h.qsChild("h3", worldCup),
 };
 
 const { worldCupFrm, worldCupResp } = worldSelectors;
@@ -601,11 +601,11 @@ worldCupFrm.addEventListener("reset", (e) => {
 });
 
 // Repeat Fruit Program - Eg_5.8.a
-const fruits = qs(".fruits");
+const fruits = h.qs(".fruits");
 
 const fruitSelectors = {
-  fruitFrm: qsChild("form", fruits),
-  fruitResp: qsChild("h3", fruits),
+  fruitFrm: h.qsChild("form", fruits),
+  fruitResp: h.qsChild("h3", fruits),
 };
 
 const { fruitFrm, fruitResp } = fruitSelectors;
@@ -629,11 +629,11 @@ fruitFrm.addEventListener("reset", (e) => {
 // Chinchilla Breeding Program - Eg_5.8.b
 // The initial number from amount must be equal or greater than 2
 // Each year, chincillas will be triplicate
-const pet = qs(".pet");
+const pet = h.qs(".pet");
 
 const petSelectors = {
-  petFrm: qsChild("form", pet),
-  petResp: qsChild("pre", pet),
+  petFrm: h.qsChild("form", pet),
+  petResp: h.qsChild("pre", pet),
 };
 
 const { petFrm, petResp } = petSelectors;
@@ -668,12 +668,12 @@ petFrm.addEventListener("reset", (e) => {
 // Perfect Numbers Program - Eg_5.8.c
 // Program must be read a number and check if it is perfect
 // A perfect number has the sum of its integer divisors, except itself.
-const perfectNumber = qs(".perfectNumber");
+const perfectNumber = h.qs(".perfectNumber");
 
 const pnSelectors = {
-  pnFrm: qsChild("form", perfectNumber),
-  pnDivisors: qsChild("#divisors", perfectNumber),
-  pnResp: qsChild("#resp", perfectNumber),
+  pnFrm: h.qsChild("form", perfectNumber),
+  pnDivisors: h.qsChild("#divisors", perfectNumber),
+  pnResp: h.qsChild("#resp", perfectNumber),
 };
 
 const { pnFrm, pnDivisors, pnResp } = pnSelectors;
@@ -704,15 +704,15 @@ pnFrm.addEventListener("reset", (e) => {
 });
 
 // Dental Office Program - Eg_6.3
-const dental = qs(".dental");
+const dental = h.qs(".dental");
 
 const dentalSelectors = {
-  dentalFrm: qsChild("form", dental),
-  dentalUrgent: qsChild("#urgent", dental),
-  dentalTreat: qsChild("#treat", dental),
-  dentalGaveUp: qsChild("#gave-up", dental),
-  dentalName: qsChild("h3 span", dental),
-  dentalPatients: qsChild("#patients", dental),
+  dentalFrm: h.qsChild("form", dental),
+  dentalUrgent: h.qsChild("#urgent", dental),
+  dentalTreat: h.qsChild("#treat", dental),
+  dentalGaveUp: h.qsChild("#gave-up", dental),
+  dentalName: h.qsChild("h3 span", dental),
+  dentalPatients: h.qsChild("#patients", dental),
 };
 
 const {
@@ -786,14 +786,14 @@ dentalGaveUp.addEventListener("click", () => {
 });
 
 // Guess the Number Game - Eg_6.4
-const guessNumber = qs(".guessNumber");
+const guessNumber = h.qs(".guessNumber");
 
 const guessNumberSelectors = {
-  guessNumberFrm: qsChild("form", guessNumber),
-  guessNumberError: qsChild("#outError", guessNumber),
-  guessNumberChances: qsChild("#outChances", guessNumber),
-  guessNumberTip: qsChild("#outTip", guessNumber),
-  guessNumberAgain: qsChild("#again", guessNumber),
+  guessNumberFrm: h.qsChild("form", guessNumber),
+  guessNumberError: h.qsChild("#outError", guessNumber),
+  guessNumberChances: h.qsChild("#outChances", guessNumber),
+  guessNumberTip: h.qsChild("#outTip", guessNumber),
+  guessNumberAgain: h.qsChild("#again", guessNumber),
 };
 
 const {
@@ -847,14 +847,14 @@ guessNumberAgain.addEventListener("click", () => {
 });
 
 // Herbie Rescale - Eg_6.8
-const resale = qs(".resale");
+const resale = h.qs(".resale");
 
 const resaleSelectors = {
-  resaleFrm: qsChild("form", resale),
-  resaleList: qsChild("#list", resale),
-  resaleFilter: qsChild("#filter", resale),
-  resaleSimulate: qsChild("#simulate", resale),
-  resaleResp: qsChild("pre", resale),
+  resaleFrm: h.qsChild("form", resale),
+  resaleList: h.qsChild("#list", resale),
+  resaleFilter: h.qsChild("#filter", resale),
+  resaleSimulate: h.qsChild("#simulate", resale),
+  resaleResp: h.qsChild("pre", resale),
 };
 
 const { resaleFrm, resaleList, resaleFilter, resaleSimulate, resaleResp } =
@@ -862,6 +862,7 @@ const { resaleFrm, resaleList, resaleFilter, resaleSimulate, resaleResp } =
 
 const listCar = [];
 
+// ADD Cars
 resaleFrm.addEventListener("submit", (e) => {
   e.preventDefault();
   const { car, price } = resaleFrm;
@@ -873,6 +874,7 @@ resaleFrm.addEventListener("submit", (e) => {
   resaleFrm.reset();
 });
 
+//List Car
 resaleList.addEventListener("click", () => {
   if (listCar.length == 0) {
     alert("Não há carros cadastrados");
@@ -886,6 +888,7 @@ resaleList.addEventListener("click", () => {
   resaleResp.innerText = `Lista dos Carros Cadastrados\n${"-".repeat(40)}\n${list}`;
 });
 
+//Filter Cars
 resaleFilter.addEventListener("click", () => {
   const priceOffer = Number(
     prompt("Qual o valor máximo que o cliente deseja pagar?"),
@@ -906,4 +909,227 @@ resaleFilter.addEventListener("click", () => {
     list += `${name} - R$: ${currencyFormat(price)}\n`;
   }
   resaleResp.innerText = `Carros até R$: ${currencyFormat(priceOffer)}\n${"-".repeat(40)}\n${list}`;
+});
+
+//Simulate Cars
+resaleSimulate.addEventListener("click", () => {
+  const discount = Number(prompt("Qual o percentual de desconto: "));
+  // console.log(discount);
+  if (discount == 0 || isNaN(discount)) {
+    return;
+  }
+
+  const discountCar = listCar.map((car) => ({
+    model: car.name,
+    price: car.price - (car.price * discount) / 100,
+  }));
+
+  let list = "";
+
+  discountCar.forEach((car) => {
+    const { model, price } = car;
+    list += `${model} - R$ ${currencyFormat(price)}\n`;
+  });
+
+  resaleResp.innerText = `Carros com desconto: ${discount}%\n${"-".repeat(40)}\n${list}`;
+});
+
+// Toys Program - Eg_6.9
+
+const toy = h.qs(".toy");
+
+const toySelectors = {
+  toyFrm: h.qsChild("form", toy),
+  toyResp: h.qsChild("pre", toy),
+  toyList: h.qsChild("#list", toy),
+  toyFilter: h.qsChild("#filter", toy),
+};
+
+const { toyFrm, toyResp, toyFilter, toyList } = toySelectors;
+let list = [];
+
+toyFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const { name, age } = toyFrm;
+  const child = name.value;
+  const ageInput = Number(age.value);
+  list.push({ name: child, age: ageInput });
+
+  const showList = h.reduceList(list);
+
+  toyResp.innerText = showList;
+  toyFrm.reset();
+  toyFrm.name.focus();
+});
+
+toyList.addEventListener("click", () => {
+  if (list.length == 0) {
+    alert(`Adicione uma criança`);
+    toyFrm.name.focus();
+    return;
+  }
+
+  const showList = h.reduceList(list);
+
+  toyResp.innerText = showList;
+  toyFrm.reset();
+});
+
+toyFilter.addEventListener("click", () => {
+  if (list.length == 0) {
+    alert(`Adicione uma criança`);
+    toyFrm.name.focus();
+    return;
+  }
+
+  const finalResult = h.generateReport(list);
+
+  toyResp.innerText = finalResult;
+});
+
+// Playoff Games - Eg_6.14.a
+
+const playoff = h.qs(".playoff");
+
+const playoffSelectors = {
+  playoffFrm: h.qsChild("form", playoff),
+  playoffList: h.qsChild("#list", playoff),
+  playoffFilter: h.qsChild("#filter", playoff),
+  playoffResp: h.qsChild("pre", playoff),
+};
+
+const { playoffFrm, playoffList, playoffFilter, playoffResp } =
+  playoffSelectors;
+
+const clubs = [];
+
+playoffFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let showList = "";
+  const club = playoffFrm.name.value;
+  clubs.push(club);
+
+  clubs.forEach((club) => (showList += `${club}\n`));
+  playoffResp.innerText = showList;
+  playoffFrm.reset();
+  playoffFrm.name.focus();
+});
+
+playoffList.addEventListener("click", () => {
+  let showList = "";
+  if (clubs.length == 0) {
+    alert(`Insira um clube na lista?`);
+    playoffFrm.name.focus();
+    return;
+  } else {
+    clubs.forEach((club) => (showList += `${club}\n`));
+    playoffResp.innerText = showList;
+  }
+});
+
+playoffFilter.addEventListener("click", () => {
+  const listGames = [...clubs];
+  let showGames = "";
+
+  if (listGames.length % 2 == 0) {
+    showGames = h.prepareGames(listGames);
+    playoffResp.innerText = showGames;
+  } else {
+    alert(`Favor incluir mais 1 time!`);
+    playoffFrm.name.focus();
+    return;
+  }
+});
+
+// Program to Sort Numbers - Eg_6.14.b
+
+const sort = h.qs(".sort");
+
+const sortSelectors = {
+  sortFrm: h.qsChild("form", sort),
+  sortFilter: h.qsChild("#filter", sort),
+  sortResp: h.qsChild("pre", sort),
+};
+
+const { sortFrm, sortFilter, sortResp } = sortSelectors;
+
+const listNumber = [];
+
+sortFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const number = Number(sortFrm.number.value);
+  if (listNumber.includes(number)) {
+    alert("Número já existe na lista, favor incluir o próximo número!");
+    sortFrm.number.value = "";
+    sortFrm.number.focus();
+    return;
+  } else {
+    listNumber.push(number);
+    sortFrm.number.focus();
+    sortResp.innerHTML = `Números: ${listNumber.join(", ")}\n\n<i>Atenção...Números não estão em ordem crescente</i>`;
+    sortFrm.reset();
+  }
+});
+
+sortFilter.addEventListener("click", () => {
+  listNumber.sort((a, b) => a - b);
+  sortResp.innerHTML = `Números: ${listNumber.join(", ")}\n\n<i>Números estão em ordem crescente</i>`;
+  sortFrm.reset();
+});
+
+// Game Show - Eg_6.14.c
+
+const gameShow = h.qs(".gameShow");
+
+const gameShowSelectors = {
+  gameShowFrm: h.qsChild("form", gameShow),
+  gameShowList: h.qsChild("#list", gameShow),
+  gameShowFilter: h.qsChild("#filter", gameShow),
+  gameShowResp: h.qsChild("pre", gameShow),
+};
+
+const { gameShowFrm, gameShowList, gameShowFilter, gameShowResp } =
+  gameShowSelectors;
+
+const listUser = [];
+
+gameShowFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let showList = "";
+  const name = gameShowFrm.name.value;
+  const grade = Number(gameShowFrm.grade.value);
+  listUser.push({ name: name, grade: grade });
+
+  listUser.forEach(
+    ({ name, grade }) => (showList += `${name} - ${grade} acertos\n`),
+  );
+  gameShowFrm.reset();
+  gameShowFrm.name.focus();
+
+  gameShowResp.innerText = showList;
+});
+
+gameShowList.addEventListener("click", () => {
+  let showList = "";
+  listUser.forEach(
+    ({ name, grade }) => (showList += `${name} - ${grade} acertos\n`),
+  );
+  gameShowFrm.reset();
+  gameShowFrm.name.focus();
+
+  gameShowResp.innerText = showList;
+});
+
+gameShowFilter.addEventListener("click", () => {
+  let showList = "";
+  const gradeMinimum = Number(prompt("Número de Acertos para Aprovação?"));
+  const approved = listUser.filter(({ grade }) => grade >= gradeMinimum);
+  approved.sort((a, b) => a - b);
+  approved.forEach(
+    ({ name, grade }) => (showList += `${name} - ${grade} acertos\n`),
+  );
+  gameShowFrm.reset();
+  gameShowFrm.name.focus();
+
+  gameShowResp.innerText = `Aprovados para 2° Fase\n${"-".repeat(40)}\n${showList}`;
 });

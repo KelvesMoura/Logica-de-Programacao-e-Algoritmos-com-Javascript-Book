@@ -6,1087 +6,1267 @@
     <meta name="description" content="JavaScript Logic" />
     <link rel="icon" href="./public/Favicon-Site.ico" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .format-image {
+        width: 400px;
+        height: auto;
+        margin-right: 2rem;
+        border-radius: 0.75rem;
+      }
+
+      .format-section {
+        padding: 0.5rem 0.5rem 1.25rem 0.5rem;
+        border-bottom: 2px;
+        border: #9ca3af;
+        display: flex;
+      }
+      .content {
+        width: 100vh;
+      }
+    </style>
     <title>JavaScript Exercise</title>
   </head>
   <body class="flex flex-col gap-6">
     <!-- Cine JS Program - Now Playing - Eg_2.9 -->
-    <section class="cine p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_2.9.png"
-        class="w-[400px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="text-3xl font-bold border-b-2 border-gray-400">
-        Cine JS: Filmes em Cartaz
-      </h1>
-      <form>
-        <p class="mt-4 mr-2">
-          Título do Filme
-          <input
-            type="text"
-            name="movie"
-            id="movie"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4 mr-2">
-          Duração (min)
-          <input
-            type="number"
-            name="duration"
-            id="duration"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Converter em Horas e Minutos"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="text-2xl font-bold mt-4"></h3>
-      <h4 class="font-bold"></h4>
-    </section>
-    <!-- JS Vehicle Resale Program - Eg_2.9.b  -->
-    <section class="car p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_2.9.b.png"
-        class="w-[400px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl border-b-2 border-gray-400">
-        Revenda de Veículos JS
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Veículo
-          <input
-            type="text"
-            name="vehicles"
-            id="vehicles"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Preço R$
-          <input
-            type="number"
-            name="price"
-            id="price"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Ver Promoção"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-6 font-bold text-xl text-center"></h3>
-      <h4 id="inputPrice" class="mt-2 font-bold text-center"></h4>
-      <h4 id="installmentPrice" class="mt-2 font-bold text-center"></h4>
-    </section>
-    <!-- JS Restaurant Program - Eg_2.9.c  -->
-    <section class="restaurant p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_2.9.c.png"
-        class="w-[400px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl border-b-2 border-gray-400">
-        Restaurante JS
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Buffet por Quilo R$
-          <input
-            type="number"
-            name="price"
-            id="price"
-            min="0"
-            step="0.01"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Consumo do Cliente (gr)
-          <input
-            type="number"
-            name="amount"
-            id="amount"
-            min="0"
-            step="0.01"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Calcular Preço"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-6 font-bold text-xl text-center"></h3>
-    </section>
-    <!-- Pharmacy Program JS - Eg_2.10.a -->
-    <section class="drug p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_2.10.a.png"
-        class="w-[400px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl border-b-2 border-gray-400">Farmácia JS</h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Medicamento
-          <input
-            type="text"
-            name="product"
-            id="product"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Preço R$
-          <input
-            type="number"
-            name="amount"
-            id="amount"
-            min="0"
-            step="0.01"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Mostrar Promoção"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-8 font-bold text-xl text-center" id="nameProduct"></h3>
-      <h3 class="mt-2 font-bold text-xl text-center" id="discountProduct"></h3>
-    </section>
-    <!-- Lan House JS Program - Eg_2.10.b -->
-    <section class="lan p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_2.10.b.png"
-        class="w-[400px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl border-b-2 border-gray-400">
-        Lan House JS
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Tempo de Uso (min)
-          <input
-            type="number"
-            name="time"
-            id="time"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Valor por 15 minutos R$
-          <input
-            type="number"
-            name="amount"
-            id="amount"
-            min="0"
-            step="0.01"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Valor á Pagar"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-6 font-bold text-xl text-center"></h3>
-    </section>
-    <!-- JS Supermarket Program - Eg_2.10.c -->
-    <section class="market p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_2.10.c.png"
-        class="w-[400px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl border-b-2 border-gray-400">
-        Supermercado JS
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Nome do Produto
-          <input
-            type="type"
-            name="product"
-            id="product"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Preço do Produto R$
-          <input
-            type="number"
-            name="price"
-            id="price"
-            min="0"
-            step="0.01"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Valor á Pagar"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-8 font-bold text-xl text-center"></h3>
-    </section>
-    <!-- Student Status Program - Eg_4.1 -->
-    <section class="student p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_4.1.png"
-        class="w-[400px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Situação do Aluno
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Nome do Aluno
-          <input
-            type="type"
-            name="studentName"
-            id="studentName"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          1° Nota
-          <input
-            type="number"
-            name="firstGrade"
-            id="firstGrade"
-            min="0"
-            step="0.1"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          2° Nota
-          <input
-            type="number"
-            name="secondGrade"
-            id="secondGrade"
-            min="0"
-            step="0.1"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Exibir Média e Situação"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-4 font-bold text-xl text-center"></h3>
-      <h4 class="mt-2 font-bold text-xl text-center"></h4>
-    </section>
-    <!-- Ideal Weight Calculation Program - Eg_4.2 -->
-    <section class="weight p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_4.2.png"
-        class="w-[400px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Cálculo de Peso Ideal
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Nome
-          <input
-            type="type"
-            name="name"
-            id="name"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Sexo
-          <input
-            type="radio"
-            name="sexo"
-            id="male"
-            class="border-2 rounded-md mx-2"
-            required
-          />Masculino
-          <input
-            type="radio"
-            name="sexo"
-            id="female"
-            class="border-2 rounded-md mx-2"
-            required
-          />
-          Feminino
-        </p>
-        <p class="mt-4">
-          Altura
-          <input
-            type="number"
-            name="height"
-            id="height"
-            min="0"
-            step="0.01"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Calcular Peso Ideal"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-4 font-bold text-xl"></h3>
-    </section>
-    <!-- Time Zone Program - Eg_4.6.b -->
-    <section class="timeZone p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_4.6.a.png"
-        class="w-[200px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Fuso Horário
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Hora no Brasil (h.m):
-          <input
-            type="number"
-            name="time"
-            id="time"
-            min="0"
-            step="0.01"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Exibir Hora na França"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-4 font-bold text-xl"></h3>
-    </section>
-    <!-- Square Root Program - Eg_4.6.b -->
-    <section class="sqrt p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_4.6.b.png"
-        class="w-[200px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Raiz Quadrada
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Número:
-          <input
-            type="number"
-            name="number"
-            id="number"
-            min="0"
-            step="0.01"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Exibir Raiz Quadrada"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-4 font-bold text-xl"></h3>
-    </section>
-    <!-- ATM Program - Eg_4.6.c -->
-    <section class="atm p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_4.6.c.png"
-        class="w-[200px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa de Caixa Eletrônico
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Valor do Saque R$:
-          <input
-            type="number"
-            name="withdraw"
-            id="withdraw"
-            min="10"
-            required
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Exibir Notas para Saque"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-4 font-bold text-xl" id="note100"></h3>
-      <h3 class="mt-2 font-bold text-xl" id="note50"></h3>
-      <h3 class="mt-2 font-bold text-xl" id="note10"></h3>
-    </section>
-    <!-- Parking Meter Program - Eg_4.8.c -->
-    <section class="parking p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_4.8.c.png"
-        class="w-[250px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Parquímetro
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Valor R$:
-          <input
-            type="number"
-            name="payment"
-            id="payment"
-            min="1"
-            step="0.01"
-            required
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Confirmar Depósito"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-4 font-bold text-xl" id="time"></h3>
-      <h3 class="mt-4 font-bold text-xl" id="change"></h3>
-    </section>
-    <!-- Program for the Sides of a Triangle - Eg_4.8.d -->
-    <section class="triangle p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_4.8.d.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Lados de Um Triângulo
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Lado A:
-          <input
-            type="number"
-            name="sideA"
-            id="sideA"
-            min="1"
-            required
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Lado B:
-          <input
-            type="number"
-            name="sideB"
-            id="sideB"
-            min="1"
-            required
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Lado C:
-          <input
-            type="number"
-            name="sideC"
-            id="sideC"
-            min="1"
-            required
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Verificar Lados"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-4 font-bold text-xl" id="resp"></h3>
-      <h3 class="mt-4 font-bold text-xl" id="type"></h3>
-    </section>
-    <!-- Multiplication Table Program - Eg_5.1 -->
-    <section class="multiplication-table p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.1.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Tabuada
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Número:
-          <input
-            type="number"
-            name="numberInput"
-            id="numberInput"
-            step="1"
-            required
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Mostrar Tabuada"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <pre class="mt-4 text-lg"></pre>
-    </section>
-    <!-- Decreasing Program - Eg_5.2 -->
-    <section class="decrescent p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.2.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Números Decrescentes
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Número:
-          <input
-            type="number"
-            name="numberInput"
-            id="numberInput"
-            step="1"
-            required
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Decrescer até 1"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <pre class="mt-4 text-lg text-wrap"></pre>
-    </section>
-    <!-- Breaks in Ties - Eg_5.3 -->
-    <section class="break_continue p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.3.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Interrupções nos Laços
-      </h1>
-      <button
-        class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-      >
-        Iniciar Teste
-      </button>
-      <p class="mt-6 text-xl font-bold">Funcionalidade:</p>
-      <ul class="list-disc text-lg">
-        <li class="mt-4">
-          Caso o valor seja 0 ou inválido, irá direcionar para Confirmação de
-          Saída
-        </li>
-        <li>
-          Número par irá mostrar o dobro. Número impar irá mostrar o triplo.
-        </li>
-        <li>Comando: OK = Continue | Cancel = Break</li>
-      </ul>
-    </section>
-    <!-- Monthly Accounts Program in Laços - Eg_5.5 -->
-    <section class="bill_month p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.5.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa de Contas do Mês
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Descrição da Conta
-          <input
-            type="text"
-            name="bill"
-            id="bill"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Valor a Pagar R$
-          <input
-            type="number"
-            name="amount"
-            id="amount"
-            min="0"
-            step="0.01"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Registrar Conta"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <pre id="resp1" class="mt-6"></pre>
-      <pre id="resp2"></pre>
-    </section>
-    <!-- Prime Numbers Program - Eg_5.6 -->
-    <section class="primes p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.6.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Números Primos
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Número:
-          <input
-            type="number"
-            name="number"
-            id="number"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Verificar Número"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-6 font-bold"></h3>
-    </section>
-    <!-- Star Factory Program - Eg_5.7 -->
-    <section class="star p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.7.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Fábrica de Estrelas
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Número de Símbolos:
-          <input
-            type="number"
-            name="number"
-            id="number"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Preencher Espaço"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-6 font-bold"></h3>
-    </section>
-    <!-- World Cup Program - Eg_5.8 -->
-    <section class="worldCup p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.8.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa de Copa do Mundo
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Digite o Ano:
-          <input
-            type="number"
-            name="year"
-            id="year"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Verificar"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-6 font-bold"></h3>
-    </section>
-    <!-- Repeat Fruit Program - Eg_5.8.a -->
-    <section class="fruits p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.8.a.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Repete Fruta
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Fruta
-          <input
-            type="text"
-            name="name"
-            id="name"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          Número
-          <input
-            type="number"
-            name="time"
-            id="time"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Repetir Frutas"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-6 font-bold"></h3>
-    </section>
-    <!-- Chinchilla Breeding Program - Eg_5.8.b -->
-    <section class="pet p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.8.b.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Program Criação de Chinchilas
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          N° Chinchilas
-          <input
-            type="number"
-            name="amount"
-            id="amount"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
-          N° de Anos
-          <input
-            type="number"
-            name="year"
-            id="year"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Repetir Frutas"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <pre class="mt-6 font-bold"></pre>
-    </section>
-    <!-- Perfect Numbers Program - Eg_5.8.c -->
-    <section class="perfectNumber p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_5.8.c.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Programa Número Perfeito
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Número
-          <input
-            type="number"
-            name="inputNumber"
-            id="inputNumber"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <input
-          type="submit"
-          value="Verificar se o Número é Perfeito"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="reset"
-          value="Limpar Valores"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <pre class="mt-6 font-bold" id="divisors"></pre>
-      <pre class="mt-6 font-bold" id="resp"></pre>
-    </section>
-    <!-- Dental Offic Program - Eg_6.3 -->
-    <section class="dental p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_6.3.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Consultório Odontológico
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Paciente
-          <!-- Autofocus inicia o cursor no campo definido -->
-          <input
-            type="text"
-            name="patient"
-            id="patient"
-            class="border-2 rounded-md px-2"
-            required
-          />
-          <!-- Colocar dentro do input acima => autofocus -->
-        </p>
-        <input
-          type="submit"
-          value="Adicionar"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="button"
-          value="Urgência"
-          id="urgent"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="button"
-          value="Atender"
-          id="treat"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-        <input
-          type="button"
-          value="Desistiu"
-          id="gave-up"
-          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-        />
-      </form>
-      <h3 class="mt-6 font-bold">
-        Em Atendimento: <span class="mt-6 font-bold text-blue-500"></span>
-      </h3>
-      <pre class="mt-6 font-bold" id="patients"></pre>
-    </section>
-    <!-- Guess the Number Game - Eg_6.4 -->
-    <section class="guessNumber p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_6.4.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Jogo Descubra o Número
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Número
-          <input
-            type="number"
-            name="number"
-            id="number"
-            class="border-2 rounded-md px-2"
-            min="1"
-            max="100"
-            requerid
+    <section class="cine format-section">
+      <img src="./src/assets/image/Eg_2.9.png" class="format-image" />
+      <div class="content">
+        <h1 class="text-3xl font-bold border-b-2 border-gray-400">
+          Cine JS: Filmes em Cartaz
+        </h1>
+        <form>
+          <p class="mt-4 mr-2">
+            Título do Filme
+            <input
+              type="text"
+              name="movie"
+              id="movie"
+              class="border-2 rounded-md px-2"
             />
-            <!-- Adicionar autofocus no input number acima -->
+          </p>
+          <p class="mt-4 mr-2">
+            Duração (min)
+            <input
+              type="number"
+              name="duration"
+              id="duration"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
           <input
             type="submit"
-            id="submit"
-            value="Apostar"
-            class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            value="Converter em Horas e Minutos"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="text-2xl font-bold mt-4"></h3>
+        <h4 class="font-bold"></h4>
+      </div>
+    </section>
+    <!-- JS Vehicle Resale Program - Eg_2.9.b  -->
+    <section class="car format-section">
+      <img src="./src/assets/image/Eg_2.9.b.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl border-b-2 border-gray-400">
+          Revenda de Veículos JS
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Veículo
+            <input
+              type="text"
+              name="vehicles"
+              id="vehicles"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Preço R$
+            <input
+              type="number"
+              name="price"
+              id="price"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Ver Promoção"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-6 font-bold text-xl text-center"></h3>
+        <h4 id="inputPrice" class="mt-2 font-bold text-center"></h4>
+        <h4 id="installmentPrice" class="mt-2 font-bold text-center"></h4>
+      </div>
+    </section>
+    <!-- JS Restaurant Program - Eg_2.9.c  -->
+    <section class="restaurant format-section">
+      <img src="./src/assets/image/Eg_2.9.c.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl border-b-2 border-gray-400">
+          Restaurante JS
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Buffet por Quilo R$
+            <input
+              type="number"
+              name="price"
+              id="price"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Consumo do Cliente (gr)
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Calcular Preço"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-6 font-bold text-xl text-center"></h3>
+      </div>
+    </section>
+    <!-- Pharmacy Program JS - Eg_2.10.a -->
+    <section class="drug format-section">
+      <img src="./src/assets/image/Eg_2.10.a.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl border-b-2 border-gray-400">
+          Farmácia JS
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Medicamento
+            <input
+              type="text"
+              name="product"
+              id="product"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Preço R$
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Mostrar Promoção"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-8 font-bold text-xl text-center" id="nameProduct"></h3>
+        <h3
+          class="mt-2 font-bold text-xl text-center"
+          id="discountProduct"
+        ></h3>
+      </div>
+    </section>
+    <!-- Lan House JS Program - Eg_2.10.b -->
+    <section class="lan format-section">
+      <img src="./src/assets/image/Eg_2.10.b.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl border-b-2 border-gray-400">
+          Lan House JS
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Tempo de Uso (min)
+            <input
+              type="number"
+              name="time"
+              id="time"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Valor por 15 minutos R$
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Valor á Pagar"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-6 font-bold text-xl text-center"></h3>
+      </div>
+    </section>
+    <!-- JS Supermarket Program - Eg_2.10.c -->
+    <section class="market format-section">
+      <img src="./src/assets/image/Eg_2.10.c.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl border-b-2 border-gray-400">
+          Supermercado JS
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Nome do Produto
+            <input
+              type="type"
+              name="product"
+              id="product"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Preço do Produto R$
+            <input
+              type="number"
+              name="price"
+              id="price"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Valor á Pagar"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-8 font-bold text-xl text-center"></h3>
+      </div>
+    </section>
+    <!-- Student Status Program - Eg_4.1 -->
+    <section class="student format-section">
+      <img src="./src/assets/image/Eg_4.1.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Situação do Aluno
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Nome do Aluno
+            <input
+              type="type"
+              name="studentName"
+              id="studentName"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            1° Nota
+            <input
+              type="number"
+              name="firstGrade"
+              id="firstGrade"
+              min="0"
+              step="0.1"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            2° Nota
+            <input
+              type="number"
+              name="secondGrade"
+              id="secondGrade"
+              min="0"
+              step="0.1"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Exibir Média e Situação"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-4 font-bold text-xl text-center"></h3>
+        <h4 class="mt-2 font-bold text-xl text-center"></h4>
+      </div>
+    </section>
+    <!-- Ideal Weight Calculation Program - Eg_4.2 -->
+    <section class="weight format-section">
+      <img src="./src/assets/image/Eg_4.2.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Cálculo de Peso Ideal
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Nome
+            <input
+              type="type"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Sexo
+            <input
+              type="radio"
+              name="sexo"
+              id="male"
+              class="border-2 rounded-md mx-2"
+              required
+            />Masculino
+            <input
+              type="radio"
+              name="sexo"
+              id="female"
+              class="border-2 rounded-md mx-2"
+              required
+            />
+            Feminino
+          </p>
+          <p class="mt-4">
+            Altura
+            <input
+              type="number"
+              name="height"
+              id="height"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Calcular Peso Ideal"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-4 font-bold text-xl"></h3>
+      </div>
+    </section>
+    <!-- Time Zone Program - Eg_4.6.b -->
+    <section class="timeZone format-section">
+      <img src="./src/assets/image/Eg_4.6.a.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Fuso Horário
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Hora no Brasil (h.m):
+            <input
+              type="number"
+              name="time"
+              id="time"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Exibir Hora na França"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-4 font-bold text-xl"></h3>
+      </div>
+    </section>
+    <!-- Square Root Program - Eg_4.6.b -->
+    <section class="sqrt format-section">
+      <img src="./src/assets/image/Eg_4.6.b.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Raiz Quadrada
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Número:
+            <input
+              type="number"
+              name="number"
+              id="number"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Exibir Raiz Quadrada"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-4 font-bold text-xl"></h3>
+      </div>
+    </section>
+    <!-- ATM Program - Eg_4.6.c -->
+    <section class="atm format-section">
+      <img src="./src/assets/image/Eg_4.6.c.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa de Caixa Eletrônico
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Valor do Saque R$:
+            <input
+              type="number"
+              name="withdraw"
+              id="withdraw"
+              min="10"
+              required
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Exibir Notas para Saque"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-4 font-bold text-xl" id="note100"></h3>
+        <h3 class="mt-2 font-bold text-xl" id="note50"></h3>
+        <h3 class="mt-2 font-bold text-xl" id="note10"></h3>
+      </div>
+    </section>
+    <!-- Parking Meter Program - Eg_4.8.c -->
+    <section class="parking format-section">
+      <img src="./src/assets/image/Eg_4.8.c.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Parquímetro
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Valor R$:
+            <input
+              type="number"
+              name="payment"
+              id="payment"
+              min="1"
+              step="0.01"
+              required
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Confirmar Depósito"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-4 font-bold text-xl" id="time"></h3>
+        <h3 class="mt-4 font-bold text-xl" id="change"></h3>
+      </div>
+    </section>
+    <!-- Program for the Sides of a Triangle - Eg_4.8.d -->
+    <section class="triangle format-section">
+      <img src="./src/assets/image/Eg_4.8.d.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Lados de Um Triângulo
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Lado A:
+            <input
+              type="number"
+              name="sideA"
+              id="sideA"
+              min="1"
+              required
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Lado B:
+            <input
+              type="number"
+              name="sideB"
+              id="sideB"
+              min="1"
+              required
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Lado C:
+            <input
+              type="number"
+              name="sideC"
+              id="sideC"
+              min="1"
+              required
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Verificar Lados"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-4 font-bold text-xl" id="resp"></h3>
+        <h3 class="mt-4 font-bold text-xl" id="type"></h3>
+      </div>
+    </section>
+    <!-- Multiplication Table Program - Eg_5.1 -->
+    <section class="multiplication-table format-section">
+      <img src="./src/assets/image/Eg_5.1.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Tabuada
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Número:
+            <input
+              type="number"
+              name="numberInput"
+              id="numberInput"
+              step="1"
+              required
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Mostrar Tabuada"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <pre class="mt-4 text-lg"></pre>
+      </div>
+    </section>
+    <!-- Decreasing Program - Eg_5.2 -->
+    <section class="decrescent format-section">
+      <img src="./src/assets/image/Eg_5.2.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Números Decrescentes
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Número:
+            <input
+              type="number"
+              name="numberInput"
+              id="numberInput"
+              step="1"
+              required
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Decrescer até 1"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <pre class="mt-4 text-lg text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Breaks in Ties - Eg_5.3 -->
+    <section class="break_continue format-section">
+      <img src="./src/assets/image/Eg_5.3.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Interrupções nos Laços
+        </h1>
+        <button
+          class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+        >
+          Iniciar Teste
+        </button>
+        <p class="mt-6 text-xl font-bold">Funcionalidade:</p>
+        <ul class="list-disc text-lg">
+          <li class="mt-4">
+            Caso o valor seja 0 ou inválido, irá direcionar para Confirmação de
+            Saída
+          </li>
+          <li>
+            Número par irá mostrar o dobro. Número impar irá mostrar o triplo.
+          </li>
+          <li>Comando: OK = Continue | Cancel = Break</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Monthly Accounts Program in Laços - Eg_5.5 -->
+    <section class="bill_month format-section">
+      <img src="./src/assets/image/Eg_5.5.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa de Contas do Mês
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Descrição da Conta
+            <input
+              type="text"
+              name="bill"
+              id="bill"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Valor a Pagar R$
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Registrar Conta"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <pre id="resp1" class="mt-6"></pre>
+        <pre id="resp2"></pre>
+      </div>
+    </section>
+    <!-- Prime Numbers Program - Eg_5.6 -->
+    <section class="primes format-section">
+      <img src="./src/assets/image/Eg_5.6.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Números Primos
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Número:
+            <input
+              type="number"
+              name="number"
+              id="number"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Verificar Número"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-6 font-bold"></h3>
+      </div>
+    </section>
+    <!-- Star Factory Program - Eg_5.7 -->
+    <section class="star format-section">
+      <img src="./src/assets/image/Eg_5.7.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Fábrica de Estrelas
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Número de Símbolos:
+            <input
+              type="number"
+              name="number"
+              id="number"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Preencher Espaço"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-6 font-bold"></h3>
+      </div>
+    </section>
+    <!-- World Cup Program - Eg_5.8 -->
+    <section class="worldCup format-section">
+      <img src="./src/assets/image/Eg_5.8.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa de Copa do Mundo
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Digite o Ano:
+            <input
+              type="number"
+              name="year"
+              id="year"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Verificar"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-6 font-bold"></h3>
+      </div>
+    </section>
+    <!-- Repeat Fruit Program - Eg_5.8.a -->
+    <section class="fruits format-section">
+      <img src="./src/assets/image/Eg_5.8.a.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Repete Fruta
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Fruta
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Número
+            <input
+              type="number"
+              name="time"
+              id="time"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Repetir Frutas"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-6 font-bold"></h3>
+      </div>
+    </section>
+    <!-- Chinchilla Breeding Program - Eg_5.8.b -->
+    <section class="pet format-section">
+      <img src="./src/assets/image/Eg_5.8.b.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Program Criação de Chinchilas
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            N° Chinchilas
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            N° de Anos
+            <input
+              type="number"
+              name="year"
+              id="year"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Repetir Frutas"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <pre class="mt-6 font-bold"></pre>
+      </div>
+    </section>
+    <!-- Perfect Numbers Program - Eg_5.8.c -->
+    <section class="perfectNumber format-section">
+      <img src="./src/assets/image/Eg_5.8.c.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Número Perfeito
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Número
+            <input
+              type="number"
+              name="inputNumber"
+              id="inputNumber"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            value="Verificar se o Número é Perfeito"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="reset"
+            value="Limpar Valores"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <pre class="mt-6 font-bold" id="divisors"></pre>
+        <pre class="mt-6 font-bold" id="resp"></pre>
+      </div>
+    </section>
+    <!-- Dental Offic Program - Eg_6.3 -->
+    <section class="dental format-section">
+      <img src="./src/assets/image/Eg_6.3.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Consultório Odontológico
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Paciente
+            <!-- Autofocus inicia o cursor no campo definido -->
+            <input
+              type="text"
+              name="patient"
+              id="patient"
+              class="border-2 rounded-md px-2"
+              required
+            />
+            <!-- Colocar dentro do input acima => autofocus -->
+          </p>
+          <input
+            type="submit"
+            value="Adicionar"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
           />
           <input
             type="button"
-            id="again"
-            value="Jogar Novamente"
-            class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md hidden"
+            value="Urgência"
+            id="urgent"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
           />
-        </p>
-      </form>
-      <h3 class="mt-6 font-bold">
-        Erro: <span class="mt-6 font-bold text-blue-500" id="outError"></span>
-      </h3>
-      <h3 class="mt-6 font-bold">
-        Chances:
-        <span class="mt-6 font-bold text-blue-500" id="outChances">Você terá 6 tentativas</span>
-      </h3>
-      <h3 class="mt-6 font-bold italic" id="outTip">
-        Dica 1: É um número entre 1 a 100. </br>
-        Dica 2: Use a pesquisa binária
-      </h3>
-      <pre class="mt-6 font-bold" id="patients"></pre>
+          <input
+            type="button"
+            value="Atender"
+            id="treat"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+          <input
+            type="button"
+            value="Desistiu"
+            id="gave-up"
+            class="mt-4 mr-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <h3 class="mt-6 font-bold">
+          Em Atendimento: <span class="mt-6 font-bold text-blue-500"></span>
+        </h3>
+        <pre class="mt-6 font-bold" id="patients"></pre>
+      </div>
+    </section>
+    <!-- Guess the Number Game - Eg_6.4 -->
+    <section class="guessNumber format-section">
+      <img src="./src/assets/image/Eg_6.4.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Jogo Descubra o Número
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Número
+            <input
+              type="number"
+              name="number"
+              id="number"
+              class="border-2 rounded-md px-2"
+              min="1"
+              max="100"
+              requerid
+            />
+            <!-- Adicionar autofocus no input number acima -->
+            <input
+              type="submit"
+              id="submit"
+              value="Apostar"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="again"
+              value="Jogar Novamente"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md hidden"
+            />
+          </p>
+        </form>
+        <h3 class="mt-6 font-bold">
+          Erro: <span class="mt-6 font-bold text-blue-500" id="outError"></span>
+        </h3>
+        <h3 class="mt-6 font-bold">
+          Chances:
+          <span class="mt-6 font-bold text-blue-500" id="outChances"
+            >Você terá 6 tentativas</span
+          >
+        </h3>
+        <h3 class="mt-6 font-bold italic" id="outTip">
+          Dica 1: É um número entre 1 a 100. <br />
+          Dica 2: Use a pesquisa binária
+        </h3>
+      </div>
     </section>
     <!-- Herbie Resale - Eg_6.8 -->
-    <section class="resale p-2 pb-5 border-b-2 border-gray-400">
-      <img
-        src="./src/assets/image/Eg_6.8.png"
-        class="w-[350px] h-auto float-left mr-6 rounded-xl"
-      />
-      <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
-        Revenda Herbie
-      </h1>
-      <form class="ml-2">
-        <p class="mt-4">
-          Modelo
-          <input
-            type="text"
-            name="car"
-            id="car"
-            class="border-2 rounded-md px-2"
-          />
-        </p>
-        <p class="mt-4">
+    <section class="resale format-section">
+      <img src="./src/assets/image/Eg_6.8.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Revenda Herbie
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Modelo
+            <input
+              type="text"
+              name="car"
+              id="car"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
             Preço
-          <input
-            type="number"
-            name="price"
-            id="price"
-            min="1"
-            step="1"
-            class="border-2 rounded-md px-2"
-          />
-          <input
-          type="submit"
-          id="submit"
-          value="Adicionar"
-          class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-          />
-        </p>
-        <p>
-          <input
-          type="button"
-          id="list"
-          value="Listar Todos"
-          class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-          />
-          <input
-          type="button"
-          id="filter"
-          value="Filtrar por Preço"
-          class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-          />
-          <input
-          type="button"
-          id="simulate"
-          value="Simular Promoção"
-          class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
-          />
-        </p>
-      </form>
-      <pre class="mt-6 font-bold" id="patients"></pre>
+            <input
+              type="number"
+              name="price"
+              id="price"
+              min="1"
+              step="1"
+              class="border-2 rounded-md px-2"
+            />
+            <input
+              type="submit"
+              id="submit"
+              value="Adicionar"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+          <p>
+            <input
+              type="button"
+              id="list"
+              value="Listar Todos"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="filter"
+              value="Filtrar por Preço"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="simulate"
+              value="Simular Promoção"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold"></pre>
+      </div>
+    </section>
+    <!-- Toys Program - Eg_6.9 -->
+    <section class="toy format-section flex flex-row">
+      <img src="./src/assets/image/Eg_6.9.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa de Brinquedoteca
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Clube
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Idade
+            <input
+              type="number"
+              name="age"
+              id="age"
+              step="1"
+              class="border-2 rounded-md px-2"
+            />
+            <input
+              type="submit"
+              id="submit"
+              value="Adicionar"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+          <p>
+            <input
+              type="button"
+              id="list"
+              value="Listar Todos"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="filter"
+              value="Filtrar por Idade"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold"></pre>
+      </div>
+    </section>
+    <!-- Playoff Games - Eg_6.14.a -->
+    <section class="playoff format-section flex flex-row">
+      <img src="./src/assets/image/Eg_6.14.a.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Jogos Eliminatórios
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Clube
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2"
+            />
+            <input
+              type="submit"
+              id="submit"
+              value="Adicionar"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+          <p>
+            <input
+              type="button"
+              id="list"
+              value="Listar Clubes"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="filter"
+              value="Montar Tabelas de Jogos"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold"></pre>
+      </div>
+    </section>
+    <!-- Program to Sort Numbers - Eg_6.14.b -->
+    <section class="sort format-section flex flex-row">
+      <img src="./src/assets/image/Eg_6.14.b.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Program Números em Ordem
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Número
+            <input
+              type="number"
+              name="number"
+              id="number"
+              step="1"
+              min="0"
+              class="border-2 rounded-md px-2"
+            />
+            <input
+              type="submit"
+              id="submit"
+              value="Adicionar"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+          <p>
+            <input
+              type="button"
+              id="filter"
+              value="Verificar Ordem"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold"></pre>
+      </div>
+    </section>
+    <!-- Game Show - Eg_6.14.c -->
+    <section class="gameShow format-section flex flex-row">
+      <img src="./src/assets/image/Eg_6.14.c.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa de Concurso
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Candidato
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p>
+            N° de Acertos
+            <input
+              type="number"
+              name="grade"
+              id="grade"
+              step="0.1"
+              min="0"
+              max="100"
+              class="border-2 rounded-md px-2"
+            />
+            <input
+              type="submit"
+              id="submit"
+              value="Adicionar"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+          <p>
+            <input
+              type="button"
+              id="list"
+              value="Listar Todos"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="filter"
+              value="Aprovados 2° Etapa"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold"></pre>
+      </div>
     </section>
     <script type="module" src="./src/assets/js/index.js"></script>
   </body>

@@ -235,7 +235,6 @@ Concepts practiced:
 
 - 🦷 **Dental Office Queue System**
 - 🎮 **Guess the Number Game**
-- 🚗 **Herbie Resale**
 
 Concepts practiced:
 
@@ -243,7 +242,6 @@ Concepts practiced:
 - Queue simulation
 - Random number generation
 - Game logic
-- Filtering arrays
 - DOM interaction
 - Event handling
 
