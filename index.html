@@ -15,13 +15,12 @@
       }
 
       .format-section {
-        padding: 0.5rem 0.5rem 1.25rem 0.5rem;
-        border-bottom: 2px;
-        border: #9ca3af;
+        padding: 1.25rem 0.5rem;
+        border-bottom: 2px solid;
         display: flex;
       }
       .content {
-        width: 100vh;
+        min-width: auto;
       }
     </style>
     <title>JavaScript Exercise</title>
@@ -374,7 +373,7 @@
             Feminino
           </p>
           <p class="mt-4">
-            Altura
+            Altura (m)
             <input
               type="number"
               name="height"
@@ -1266,6 +1265,359 @@
           </p>
         </form>
         <pre class="mt-6 font-bold"></pre>
+      </div>
+    </section>
+    <!-- What's the Fruit? - Eg_7.1-->
+    <section class="gameFruit format-section flex flex-row">
+      <img src="./src/assets/image/Eg_7.1.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Qual é Fruta?
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Fruta
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2"
+            />
+            <input
+              type="submit"
+              id="submit"
+              value="Jogar"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold"></pre>
+      </div>
+    </section>
+    <!-- Program name on Badge - Eg_7.4-->
+    <section class="flName format-section flex flex-row">
+      <img src="./src/assets/image/Eg_7.4.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Nome ao Crachá
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Nome do Participante
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            id="submit"
+            value="Gerar Crachá"
+            class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <pre class="mt-6 font-bold"></pre>
+      </div>
+    </section>
+    <!-- Institutional Email Program - Eg_7.5-->
+    <section class="email format-section flex flex-row">
+      <img src="./src/assets/image/Eg_7.5.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa E-mail Institutional
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Funcionário
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            id="submit"
+            value="Gerar Email"
+            class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <pre class="mt-6 font-bold"></pre>
+      </div>
+    </section>
+    <!-- Password Validation Program - Eg_7.6-->
+    <section class="pw format-section flex flex-row">
+      <img src="./src/assets/image/Eg_7.6.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Valida Senha
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Senha
+            <input
+              type="text"
+              name="word"
+              id="word"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <input
+            type="submit"
+            id="submit"
+            value="Verificar Validade"
+            class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+          />
+        </form>
+        <pre class="mt-6 font-bold text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Store Management Software - Eg_7.7-->
+    <section class="store format-section flex flex-row">
+      <img src="./src/assets/image/Eg_7.7.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Caixa de Loja
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Data de Vencimento
+            <input
+              type="date"
+              name="date"
+              id="date"
+              class="border-2 rounded-md px-2"
+              required
+            />
+          </p>
+          <p class="mt-4">
+            Valor da Conta R$
+            <input
+              type="number"
+              name="bill"
+              id="bill"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2 text-right"
+              required
+            />
+            <input
+              type="submit"
+              id="submit"
+              value="Calcular Multa e Juros"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+          <p class="mt-4">
+            Valor da Multa R$
+            <input
+              type="number"
+              name="tax"
+              id="tax"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2 text-right"
+              readonly
+            />
+          </p>
+          <p class="mt-4">
+            Valor do Juros R$
+            <input
+              type="number"
+              name="interest"
+              id="interest"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2 text-right"
+              readonly
+            />
+          </p>
+          <p>
+            Total a Pagar R$
+            <input
+              type="number"
+              name="payment"
+              id="payment"
+              min="0"
+              step="0.01"
+              class="border-2 rounded-md px-2 text-right"
+              readonly
+            />
+            <input
+              type="reset"
+              id="reset"
+              value="Nova Conta"
+              class="mt-4 ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+      </div>
+    </section>
+    <!-- Cryptograph Program - Eg_7.10.a-->
+    <section class="crypto format-section flex flex-row">
+      <img src="./src/assets/image/Eg_7.10.a.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa Criptografia
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Mensagem
+            <input
+              type="text"
+              name="password"
+              id="password"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Criptografar"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="descrypt"
+              value="Descritpografar"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="reset"
+              value="Limpar Valores"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Palindrome Sentence Exercise - Eg_7.10.b-->
+    <section class="pl format-section flex flex-row">
+      <img src="./src/assets/image/Eg_7.10.b.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Exercício Frase Palíndromo
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Frase:
+            <input
+              type="text"
+              name="input"
+              id="input"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Validar se é Palindrome"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Traffic Ticket - Eg_7.10.c-->
+    <section class="traffic format-section flex flex-row">
+      <img src="./src/assets/image/Eg_7.10.c.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Multa de Trânsito
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Data da Infração
+            <input
+              type="date"
+              name="date"
+              id="date"
+              class="border-2 rounded-md px-2"
+              required
+            />
+          </p>
+          <p class="mt-4">
+            Valor da Multa R$:
+            <input
+              type="number"
+              name="bill"
+              id="bill"
+              step="0.01"
+              min="1"
+              class="border-2 rounded-md px-2 text-right"
+              required
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Calcular Data Limite e Valor com Desconto"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Car Dealership - Eg_8.3-->
+    <section class="dealCar format-section flex flex-row">
+      <img src="./src/assets/image/Eg_8.3.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Revenda Avenida Promoção
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Modelo do Veículo
+            <input
+              type="text"
+              name="car"
+              id="car"
+              class="border-2 rounded-md px-2"
+            />
+          </p>
+          <p class="mt-4">
+            Ano de Fabricação
+            <input
+              type="number"
+              name="year"
+              id="year"
+              class="border-2 rounded-md px-2 text-right"
+            />
+          </p>
+          <p class="mt-4">
+            Preço R$
+            <input
+              type="number"
+              name="price"
+              id="price"
+              step="0.01"
+              class="border-2 rounded-md px-2 text-right"
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Classificar - Calcular Entrada e Parcelas"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="reset"
+              value="Limpar Valores"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold text-wrap"></pre>
       </div>
     </section>
     <script type="module" src="./src/assets/js/index.js"></script>

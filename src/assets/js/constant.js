@@ -1,0 +1,11 @@
+export const carParcel = 12;
+export const kiloToGram = 1000;
+export const double = 2;
+export const triple = 3;
+export const half = 2;
+export const indexMale = 22;
+export const indexFemale = 21;
+export const hour24 = 24;
+export const hourPlus = 5;
+export const limitMultiplication = 10;
+export const rangeWorldCup = 4;
