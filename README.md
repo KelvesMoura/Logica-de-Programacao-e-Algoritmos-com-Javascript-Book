@@ -38,7 +38,7 @@ The exercises simulate small programs such as calculators, grade systems, and lo
 # 🚀 Technologies Used
 
 - 🧾 **HTML5**
-- ⚡ **JavaScript (Vanilla JS)**
+- ⚡ **JavaScript (Vanilla JS — ES Modules)**
 - 🌐 **DOM Manipulation**
 - 🎨 **TailwindCSS (CDN)**
 
@@ -354,6 +354,10 @@ Concepts practiced:
 # 📖 Chapter 8 — Objects and Data Processing
 
 - 🚗 **Car Dealership**
+- 🍕 **Pizza Order Control** — order management with pizza and drink selection, size rules and flavor limits
+- 🏊 **Swimming Club** — athlete registration with age-based category classification
+- 🔑 **Initial Password Program** — generates an initial password from last name and vowel count
+- 🐾 **Pet Avenue** — veterinary discount calculator based on health plan type
 
 Concepts practiced:
 
@@ -362,6 +366,10 @@ Concepts practiced:
 - Financial calculations
 - Installment simulation
 - Business logic implementation
+- `select` and `radio` input handling
+- Dynamic UI visibility (show/hide elements)
+- List building with accumulated state
+- String processing for password generation
 
 ---
 

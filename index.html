@@ -18,9 +18,10 @@
         padding: 1.25rem 0.5rem;
         border-bottom: 2px solid;
         display: flex;
+        width: auto;
       }
       .content {
-        min-width: auto;
+        width: full;
       }
     </style>
     <title>JavaScript Exercise</title>
@@ -943,7 +944,7 @@
               type="text"
               name="patient"
               id="patient"
-              class="border-2 rounded-md px-2"
+              class="border-2 rounded-md px-2 w-[400px]"
               required
             />
             <!-- Colocar dentro do input acima => autofocus -->
@@ -1308,7 +1309,7 @@
               type="text"
               name="name"
               id="name"
-              class="border-2 rounded-md px-2"
+              class="border-2 rounded-md px-2 w-[400px]"
             />
           </p>
           <input
@@ -1335,7 +1336,7 @@
               type="text"
               name="name"
               id="name"
-              class="border-2 rounded-md px-2"
+              class="border-2 rounded-md px-2 w-[400px]"
             />
           </p>
           <input
@@ -1510,7 +1511,7 @@
               type="text"
               name="input"
               id="input"
-              class="border-2 rounded-md px-2"
+              class="border-2 rounded-md px-2 w-[400px]"
             />
           </p>
           <p class="mt-4">
@@ -1608,6 +1609,191 @@
               type="submit"
               id="submit"
               value="Classificar - Calcular Entrada e Parcelas"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="reset"
+              value="Limpar Valores"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Pizza Order Control - Eg_8.6-->
+    <section class="pizza format-section flex flex-row">
+      <img src="./src/assets/image/Eg_8.6.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Pizzaria Avenida - Controle de Pedidos
+        </h1>
+        <form class="ml-2 w-screen">
+          <p class="mt-4">
+            Item do Pedido
+            <input
+              type="radio"
+              name="product"
+              id="sPizza"
+              autofocus
+              checked
+              class="border-2 rounded-md px-2"
+            />
+            Pizza
+            <input
+              type="radio"
+              name="product"
+              id="sDrink"
+              class="border-2 rounded-md px-2 text-right"
+            />
+            Bebida
+          </p>
+          <p class="mt-4">
+            <span>Item:</span>
+            <select id="lPizza" class="border-2 rounded-md p-1">
+              <option value="middle">Pizza Média</option>
+              <option value="big">Pizza Grande</option>
+              <option value="family">Pizza Familia</option>
+            </select>
+            <select id="lDrink" class="border-2 rounded-md p-1 hidden">
+              <option value="soda">Refrigerante</option>
+              <option value="juice">Jarra de Suco</option>
+              <option value="water">Água</option>
+            </select>
+          </p>
+          <p class="mt-4">
+            Detalhes do Item:
+            <input
+              type="text"
+              name="order"
+              id="order"
+              class="border-2 rounded-md px-2 text-right w-[400px]"
+            />
+            <input
+              type="submit"
+              id="submit"
+              value="Adicionar"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Swimming Club - Eg_8.8.a-->
+    <section class="swim format-section flex flex-row">
+      <img src="./src/assets/image/Eg_8.8.a.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Clube de Natação
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Nome do Atleta
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2 w-[400px]"
+            />
+          </p>
+          <p class="mt-4">
+            Idade
+            <input
+              type="number"
+              name="age"
+              id="age"
+              class="border-2 rounded-md px-2 text-right w-[75px]"
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Categorizar Atleta"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="reset"
+              value="Limpar Valores"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Initial Password Program - Eg_8.8.b-->
+    <section class="iPw format-section flex flex-row">
+      <img src="./src/assets/image/Eg_7.10.a.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Programa de Senha Inicial
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Nome do Aluno
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-2 rounded-md px-2 w-[400px]"
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Gerar Senha"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="reset"
+              value="Limpar Valores"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <pre class="mt-6 font-bold text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Pet Avenue - Eg_8.8.c-->
+    <section class="petAv format-section flex flex-row">
+      <img src="./src/assets/image/Eg_8.8.c.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Veterinaria Avenida
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            Valor da Vacina:
+            <input
+              type="number"
+              name="price"
+              id="price"
+              step="0.01"
+              class="border-2 rounded-md px-2 w-[400px]"
+            />
+          </p>
+          <p class="mt-4">
+            Possui Convênio
+            <input type="radio" name="plan" id="yes" class="mr-1 ml-2" />Sim
+            <input type="radio" name="plan" id="no" class="mr-1" />Não
+          </p>
+          <p class="mt-4 hidden" id="enable-plan">
+            Convênio<select id="listPlans" class="border-2 rounded-md ml-2 p-1">
+              <option value="friend">Amigo dos Animais</option>
+              <option value="health">Saúde Animal</option>
+            </select>
+          </p>
+          <p class="mt-4 text-red-400 font-bold hidden" id="disable-plan">
+            Sem Convênio
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Calcular Desconto"
               class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
             />
             <input
