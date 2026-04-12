@@ -7,10 +7,15 @@
     <link rel="icon" href="./public/Favicon-Site.ico" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
+      *,
+      body {
+        box-sizing: content-box;
+      }
+
       .format-image {
-        width: 400px;
-        height: auto;
-        margin-right: 2rem;
+        max-width: 400px;
+        min-height: 400px;
+        margin-right: 4rem;
         border-radius: 0.75rem;
       }
 
@@ -21,7 +26,20 @@
         width: auto;
       }
       .content {
-        width: full;
+        width: 100%;
+        max-width: none;
+      }
+
+      .container[data-club="brasil"] {
+        background: linear-gradient(to right, green, yellow);
+      }
+
+      .container[data-club="pelotas"] {
+        background: linear-gradient(to right, #63c5f7, white);
+      }
+
+      .container[data-club="farroupilha"] {
+        background: linear-gradient(to right, #017671, #df1026, yellow);
       }
     </style>
     <title>JavaScript Exercise</title>
@@ -1628,7 +1646,7 @@
         <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
           Pizzaria Avenida - Controle de Pedidos
         </h1>
-        <form class="ml-2 w-screen">
+        <form class="ml-2">
           <p class="mt-4">
             Item do Pedido
             <input
@@ -1804,6 +1822,50 @@
           </p>
         </form>
         <pre class="mt-6 font-bold text-wrap"></pre>
+      </div>
+    </section>
+    <!-- Football Club - Eg_9.2-->
+    <section class="club format-section">
+      <div
+        class="container flex flex-row justify-between w-100% max-w-none p-4 rounded-md"
+      >
+        <div class="title flex-[2]">
+          <h1 class="font-bold text-3xl">Loja de Esporte Avenida</h1>
+          <h2 class="font-bold text-2xl">Produtos esportivos em geral</h2>
+        </div>
+        <div class="flex flex-col justify-self-end">
+          <h5>Qual Clube você torce?</h5>
+          <form class="mt-2 ml-2 flex-1">
+            <input
+              type="radio"
+              name="clube"
+              id="s_Brasil"
+              class="mr-1"
+            />Brasil<br />
+            <input
+              type="radio"
+              name="clube"
+              id="s_Pelotas"
+              class="mr-1"
+            />Pelotas<br />
+            <input
+              type="radio"
+              name="clube"
+              id="s_Farroupilha"
+              class="mr-1"
+            />Farroupilha<br />
+            <input
+              type="radio"
+              name="clube"
+              id="s_none"
+              class="mr-1"
+              checked
+            />Nenhum
+          </form>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <img id="imgClub" class="w-[200px] rounded-md" />
+        </div>
       </div>
     </section>
     <script type="module" src="./src/assets/js/index.js"></script>

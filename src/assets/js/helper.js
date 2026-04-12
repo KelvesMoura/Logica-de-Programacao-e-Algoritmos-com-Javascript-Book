@@ -7,6 +7,9 @@ export const qs = (selector) => document.querySelector(selector);
 export const qsChild = (selector, parent = document) =>
   parent.querySelector(selector);
 
+export const qsChildAll = (selector, parent = document) =>
+  parent.querySelectorAll(selector);
+
 export const resetFull = (fieldReset) => {
   const newListField = Object.values(fieldReset);
   newListField[0].reset();
@@ -145,3 +148,53 @@ export const discountCalculate = (value, plan) => {
 
   return value * listDiscount[plan];
 };
+
+export const changeClub = (clubSelected) => {
+  let club = clubSelected.target.id.split("_")[1];
+  let clubLowerCase = club.toLowerCase();
+  const parent = clubSelected.target.closest(".container");
+
+  if (clubLowerCase == "none") {
+    localStorage.removeItem("club");
+    delete parent.dataset.club;
+    parent.querySelector("#imgClub").removeAttribute("alt");
+    parent.querySelector("#imgClub").src =
+      `./src/assets/image/Eg_8.8.c_${clubLowerCase}.png`;
+  } else {
+    parent.dataset.club = clubLowerCase;
+
+    localStorage.setItem("club", clubLowerCase);
+
+    changePhoto(parent, clubLowerCase, club);
+  }
+};
+
+export const checkClub = (clubStorage) => {
+  if (localStorage.getItem("club")) {
+    const clubActive = localStorage.getItem("club");
+
+    clubStorage.forEach((clubs) => {
+      let clubSet = clubs.id.split("_")[1];
+      let clubSetLowerCase = clubSet.toLowerCase();
+
+      if (clubActive == clubSetLowerCase) {
+        const parent = clubs.closest(".container");
+        parent.dataset.club = clubSetLowerCase;
+
+        clubs.checked = true;
+
+        changePhoto(parent, clubSetLowerCase, clubSet);
+      }
+    });
+  } else {
+    clubStorage[0].closest(".container").querySelector("#imgClub").src =
+      `./src/assets/image/Eg_8.8.c_none.png`;
+  }
+};
+
+function changePhoto(parent, lowerCase, clubActived) {
+  parent.querySelector("#imgClub").src =
+    `./src/assets/image/Eg_8.8.c_${lowerCase}.png`;
+
+  parent.querySelector("#imgClub").alt = `Símbolo do ${clubActived}`;
+}

@@ -61,7 +61,8 @@ project/
         │       ├── ch05.js     # Chapter 5 — Repetition Structures
         │       ├── ch06.js     # Chapter 6 — Arrays & Interactive Programs
         │       ├── ch07.js     # Chapter 7 — Strings, Validation & Text
-        │       └── ch08.js     # Chapter 8 — Objects & Data Processing
+        │       ├── ch08.js     # Chapter 8 — Objects & Data Processing
+        │       └── ch09.js     # Chapter 9 — localStorage & Persistent State
         └── image/              # Reference screenshots per exercise (Eg_X.Y.png)
 ```
 
@@ -82,6 +83,7 @@ import "./chapters/ch05.js";
 import "./chapters/ch06.js";
 import "./chapters/ch07.js";
 import "./chapters/ch08.js";
+import "./chapters/ch09.js";
 ```
 
 ### Shared utilities — `helper.js` and `constant.js`
@@ -98,34 +100,55 @@ import * as c from "../constant.js";
 
 ### `helper.js` — Utility functions
 
-| Export                           | Purpose                                            |
-| -------------------------------- | -------------------------------------------------- |
-| `qs(selector)`                   | Shorthand for `document.querySelector`             |
-| `qsChild(selector, parent)`      | Scoped child query (defaults to `document`)        |
-| `half(value)`                    | Returns half of a numeric value                    |
-| `resetFull(fieldReset)`          | Resets a form and clears all output elements       |
-| `currencyFormat(value)`          | Formats numbers as Brazilian Real (`pt-BR`)        |
-| `generateReport(list)`           | Groups children by age and builds a text report    |
-| `reduceList(list)`               | Reduces an object array into a formatted string    |
-| `prepareGames(list)`             | Pairs teams from a list into match strings         |
-| `dateFormat(date)`               | Adds 90 days to a date and returns `dd/mm/yyyy`    |
+| Export | Purpose |
+|---|---|
+| `qs(selector)` | Shorthand for `document.querySelector` |
+| `qsChild(selector, parent)` | Scoped child query (defaults to `document`) |
+| `qsChildAll(selector, parent)` | Scoped `querySelectorAll` (defaults to `document`) |
+| `half(value)` | Returns half of a numeric value |
+| `resetFull(fieldReset)` | Resets a form and clears all output elements |
+| `currencyFormat(value)` | Formats numbers as Brazilian Real (`pt-BR`) |
+| `addZero(value)` | Pads single-digit numbers with a leading zero |
+| `generateReport(list)` | Groups children by age and builds a text report |
+| `reduceList(list)` | Reduces an object array into a formatted string |
+| `prepareGames(list)` | Pairs teams from a list into match strings |
+| `dateFormat(date)` | Adds 90 days to a date and returns `dd/mm/yyyy` |
 | `dealOutput(model, year, price)` | Classifies a vehicle and computes installment plan |
+| `dashName(userName)` | Replaces name letters with dashes, preserving spaces |
+| `categoryFilter(ageUser)` | Returns age category (Infantil / Juvenil / Adulto) |
+| `validName(userName)` | Returns `true` if name is non-empty |
+| `lastName(userLastName)` | Extracts and lowercases the last word of a name |
+| `qtdVowel(userName)` | Counts vowels in a string, zero-padded |
+| `discountCalculate(value, plan)` | Applies discount rate based on health plan key |
+| `changeClub(event)` | Updates club image and persists selection to `localStorage` |
+| `checkClub(clubStorage)` | Restores club selection from `localStorage` on load |
 
 ### `constant.js` — Shared constants
 
-| Constant              | Value  | Used for                             |
-| --------------------- | ------ | ------------------------------------ |
-| `carParcel`           | `12`   | Car installment count                |
-| `kiloToGram`          | `1000` | kg ↔ g conversion                    |
-| `double`              | `2`    | "Buy 2 for price of 1" promotions    |
-| `triple`              | `3`    | "Take 3 pay 2" promotions            |
-| `half`                | `2`    | Divisor for half-price calculations  |
-| `indexMale`           | `22`   | BMI factor — male                    |
-| `indexFemale`         | `21`   | BMI factor — female                  |
-| `hour24`              | `24`   | 24-hour cycle boundary               |
-| `hourPlus`            | `5`    | Brazil → France time offset          |
-| `limitMultiplication` | `10`   | Upper bound for multiplication table |
-| `rangeWorldCup`       | `4`    | World Cup year interval              |
+| Constant | Value | Used for |
+|---|---|---|
+| `carParcel` | `12` | Car installment count |
+| `kiloToGram` | `1000` | kg ↔ g conversion |
+| `double` | `2` | "Buy 2 for price of 1" promotions |
+| `triple` | `3` | "Take 3 pay 2" promotions |
+| `half` | `2` | Divisor for half-price calculations |
+| `indexMale` | `22` | BMI factor — male |
+| `indexFemale` | `21` | BMI factor — female |
+| `hour24` | `24` | 24-hour cycle boundary |
+| `hourPlus` | `5` | Brazil → France time offset |
+| `limitMultiplication` | `10` | Upper bound for multiplication table |
+| `rangeWorldCup` | `4` | World Cup year interval |
+| `middlePieces` | `2` | Max flavors — medium pizza |
+| `bigPieces` | `3` | Max flavors — large pizza |
+| `familyPieces` | `4` | Max flavors — family pizza |
+| `perct` | `100` | Percentage base multiplier |
+| `perct50` | `0.5` | 50% rate (new car entry / health plan discount) |
+| `perct30` | `0.3` | 30% rate (used/semi-new car entry) |
+| `perct20` | `0.2` | 20% rate (Amigo dos Animais plan discount) |
+| `perct10` | `0.1` | 10% rate (no-plan discount) |
+| `childAge` | `12` | Upper age limit for Infantil category |
+| `youngAge` | `13` | Lower age limit for Juvenil category |
+| `adultAge` | `18` | Upper age limit for Juvenil category |
 
 ---
 
@@ -373,6 +396,21 @@ Concepts practiced:
 
 ---
 
+# 📖 Chapter 9 — localStorage and Persistent State
+
+- ⚽ **Football Club** — sports store that remembers the user's favorite club between sessions, dynamically updating the club image via `localStorage`
+
+Concepts practiced:
+
+- `localStorage` (`getItem`, `setItem`, `removeItem`)
+- Persistent state across page reloads
+- Dynamic image update via DOM
+- `data-*` attribute manipulation
+- Event delegation with `change` on radio inputs
+- `closest()` for scoped parent traversal
+
+---
+
 # ▶️ How to Run the Project
 
 ### 1️⃣ Clone the repository
@@ -405,5 +443,5 @@ http://localhost:8080
 
 # 📝 License
 
-Study project based on the book _Lógica de Programação e Algoritmos com JavaScript_ by Edécio Fernando Iepsen.  
+Study project based on the book *Lógica de Programação e Algoritmos com JavaScript* by Edécio Fernando Iepsen.  
 All exercise concepts belong to the original author.

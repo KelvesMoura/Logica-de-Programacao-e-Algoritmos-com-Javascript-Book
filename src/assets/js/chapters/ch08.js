@@ -227,3 +227,7 @@ petAvFrm.addEventListener("submit", (e) => {
 
   petAvResp.innerText = `Desconto ${h.currencyFormat(discountValue)}\n\nA Pagar: R$ ${h.currencyFormat(value - discountValue)}`;
 });
+
+petAvFrm.addEventListener("reset", () => {
+  h.resetFull(petAvSelectors);
+});
