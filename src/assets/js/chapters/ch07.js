@@ -1,4 +1,5 @@
 import * as h from "../helper.js";
+import * as c from "../constant.js";
 
 // What's the Fruit? - Eg_7.1
 
@@ -156,7 +157,7 @@ storeFrm.addEventListener("submit", (e) => {
   const [year, month, day] = inputDate.split("-");
   const dueDate = new Date(year, month - 1, day);
 
-  const dueDays = (today - dueDate) / 86400000;
+  const dueDays = (today - dueDate) / c.daytoMs;
 
   let taxField = 0;
   let interestField = 0;

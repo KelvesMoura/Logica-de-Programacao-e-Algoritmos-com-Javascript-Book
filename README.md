@@ -122,6 +122,19 @@ import * as c from "../constant.js";
 | `discountCalculate(value, plan)` | Applies discount rate based on health plan key |
 | `changeClub(event)` | Updates club image and persists selection to `localStorage` |
 | `checkClub(clubStorage)` | Restores club selection from `localStorage` on load |
+| `checkUser(club)` | Displays visit counter from `localStorage` on load |
+| `resetUser(e, club)` | Resets visit counter on `Ctrl+Shift+Q` keydown |
+| `weightBet(weight)` | Checks if a weight value is already registered in `localStorage` |
+| `addBet(user, weight)` | Appends a new bet (name + weight) to `localStorage` |
+| `showBet(output)` | Reads all bets from `localStorage` and renders them |
+| `checkWinner(void)` | Prompts for correct weight and announces the closest bet winner |
+| `cleanBet(output)` | Clears all bets from `localStorage` after confirmation |
+| `addProduct(product)` | Appends a product to the grocery list in `localStorage` |
+| `showProduct(output)` | Reads and renders the sorted grocery list from `localStorage` |
+| `cleanProducts(output)` | Clears the grocery list from `localStorage` after confirmation |
+| `addService(form)` | Enqueues a new vehicle service into `localStorage` |
+| `countService(form)` | Reads and displays the pending service count from `localStorage` |
+| `executeService(form)` | Dequeues and displays the next pending service from `localStorage` |
 
 ### `constant.js` — Shared constants
 
@@ -146,6 +159,7 @@ import * as c from "../constant.js";
 | `perct30` | `0.3` | 30% rate (used/semi-new car entry) |
 | `perct20` | `0.2` | 20% rate (Amigo dos Animais plan discount) |
 | `perct10` | `0.1` | 10% rate (no-plan discount) |
+| `daytoMs` | `86400000` | Converts 1 day to milliseconds |
 | `childAge` | `12` | Upper age limit for Infantil category |
 | `youngAge` | `13` | Lower age limit for Juvenil category |
 | `adultAge` | `18` | Upper age limit for Juvenil category |
@@ -399,6 +413,10 @@ Concepts practiced:
 # 📖 Chapter 9 — localStorage and Persistent State
 
 - ⚽ **Football Club** — sports store that remembers the user's favorite club between sessions, dynamically updating the club image via `localStorage`
+- 🔢 **Visit Counter** — tracks how many times the user has visited the page, with a keyboard shortcut to reset the counter
+- 🍉 **How Much Does a Watermelon Weigh?** — betting game where each participant registers a weight guess; the winner is determined by the closest estimate to the real weight
+- 🛒 **Weekly Groceries** — persistent shopping list that stores, sorts, and displays products across sessions
+- 🚗 **Vehicles Control Services** — service queue system for a vehicle workshop, processing tasks in FIFO order via `localStorage`
 
 Concepts practiced:
 
@@ -408,6 +426,10 @@ Concepts practiced:
 - `data-*` attribute manipulation
 - Event delegation with `change` on radio inputs
 - `closest()` for scoped parent traversal
+- Visit counter with keyboard shortcut reset (`keydown`)
+- FIFO queue management via string-based `localStorage`
+- Sorted list rendering with `Array.sort()`
+- Closest-value winner algorithm with `Math.abs()`
 
 ---
 

@@ -17,6 +17,7 @@ export const perct50 = 0.5;
 export const perct30 = 0.3;
 export const perct20 = 0.2;
 export const perct10 = 0.1;
+export const daytoMs = 86400000;
 export const childAge = 12;
 export const youngAge = 13;
 export const adultAge = 18;
