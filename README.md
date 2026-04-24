@@ -62,7 +62,8 @@ project/
         │       ├── ch06.js     # Chapter 6 — Arrays & Interactive Programs
         │       ├── ch07.js     # Chapter 7 — Strings, Validation & Text
         │       ├── ch08.js     # Chapter 8 — Objects & Data Processing
-        │       └── ch09.js     # Chapter 9 — localStorage & Persistent State
+        │       ├── ch09.js     # Chapter 9 — localStorage & Persistent State
+        │       └── ch10.js     # Chapter 10 — DOM Manipulation & Dynamic UI
         └── image/              # Reference screenshots per exercise (Eg_X.Y.png)
 ```
 
@@ -84,6 +85,7 @@ import "./chapters/ch06.js";
 import "./chapters/ch07.js";
 import "./chapters/ch08.js";
 import "./chapters/ch09.js";
+import "./chapters/ch10.js";
 ```
 
 ### Shared utilities — `helper.js` and `constant.js`
@@ -135,6 +137,18 @@ import * as c from "../constant.js";
 | `addService(form)` | Enqueues a new vehicle service into `localStorage` |
 | `countService(form)` | Reads and displays the pending service count from `localStorage` |
 | `executeService(form)` | Dequeues and displays the next pending service from `localStorage` |
+| `addTaskList(section)` | Creates and appends a new task node to the DOM task list |
+| `taskSelected(section)` | Cycles selection highlight through task items |
+| `taskDeleted(section)` | Removes the currently selected task after confirmation |
+| `taskSaved(section)` | Serializes all tasks to `localStorage` |
+| `showTasks(section)` | Restores saved tasks from `localStorage` on page load |
+| `addCoins(section)` | Generates a random set of coin images into the game container |
+| `checkCoins(section)` | Sums coin values from the DOM and validates the user's guess |
+| `resetCoins(section)` | Clears the coin container and generates a new random set |
+| `insertMovie(movie, genre, table)` | Inserts a new row into the movie table with a delete button |
+| `saveMovie(movie, genre)` | Appends a movie and genre to `localStorage` |
+| `showMovies(table)` | Restores the movie list from `localStorage` on page load |
+| `removeMovie(e, tableList)` | Removes a movie row from the DOM and updates `localStorage` |
 
 ### `constant.js` — Shared constants
 
@@ -430,6 +444,26 @@ Concepts practiced:
 - FIFO queue management via string-based `localStorage`
 - Sorted list rendering with `Array.sort()`
 - Closest-value winner algorithm with `Math.abs()`
+
+---
+
+# 📖 Chapter 10 — DOM Manipulation and Dynamic UI
+
+- 📋 **To Do List** — task manager with add, select, delete and save to `localStorage`, restored on page load
+- 🪙 **Guess Amount Game** — randomly generates coin images on screen; the user guesses the total value and gets immediate feedback
+- 🎬 **Favorite Movie** — persistent movie list stored in `localStorage` with title, genre and per-row deletion via dynamic table
+- 🎂 **Birthday Candles** *(in progress)*
+
+Concepts practiced:
+
+- Dynamic element creation (`createElement`, `createTextNode`, `appendChild`)
+- DOM node removal (`removeChild`, `remove`)
+- Table manipulation (`insertRow`, `insertCell`)
+- Image generation and layout via DOM
+- `localStorage` for full list persistence across sessions
+- Event delegation on dynamic elements (click on table rows)
+- State management with class toggling (`selected` / `normal`)
+- Random number generation for game mechanics (`Math.ceil`, `Math.random`)
 
 ---
 

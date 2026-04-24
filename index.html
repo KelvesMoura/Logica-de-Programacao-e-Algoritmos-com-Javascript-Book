@@ -41,6 +41,34 @@
       .container[data-club="farroupilha"] {
         background: linear-gradient(to right, #017671, #df1026, yellow);
       }
+
+      .selected {
+        color: #df1026;
+        font-style: italic;
+      }
+
+      .moeda100 {
+        height: 84px;
+        width: 84px;
+        margin-bottom: 5px;
+      }
+
+      .moeda050 {
+        height: 66px;
+        width: 66px;
+        margin-bottom: 5px;
+      }
+
+      .moeda025 {
+        height: 76px;
+        width: 76px;
+        margin-bottom: 5px;
+      }
+      .moeda010 {
+        height: 60px;
+        width: 60px;
+        margin-bottom: 5px;
+      }
     </style>
     <title>JavaScript Exercise</title>
   </head>
@@ -1653,9 +1681,9 @@
               type="radio"
               name="product"
               id="sPizza"
-              autofocus
-              checked
               class="border-2 rounded-md px-2"
+              checked
+              autofocus
             />
             Pizza
             <input
@@ -1691,7 +1719,7 @@
               type="submit"
               id="submit"
               value="Adicionar"
-              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+              class="ml-2 mt-4 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
             />
           </p>
         </form>
@@ -1994,7 +2022,172 @@
         <div class="w-full bg-black text-white p-2 mt-4 mb-4 text-lg">
           <p>Serviço em Andamento</p>
         </div>
-        <pre class="mt-6 font-bold text-wrap" id="serviceResp"></pre>
+        <pre
+          class="mt-6 font-bold text-2xl text-wrap text-center italic"
+          id="serviceResp"
+        ></pre>
+      </div>
+    </section>
+    <!-- To Do List - Eg_10.1-->
+    <section class="task format-section flex flex-row">
+      <img src="./src/assets/image/Eg_10.1.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Tarefas do Dias (a realizar)
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            <label for="name">Tarefa</label><br />
+            <input
+              type="text"
+              name="tasks"
+              id="tasks"
+              class="border-2 rounded-md px-2 w-[400px]"
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Adicionar"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="select"
+              value="Selecionar"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="delete"
+              value="Deletar"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="save"
+              value="Salvar"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+      </div>
+    </section>
+    <!-- Guess Amount Game - Eg_10.2-->
+    <section class="gmoney format-section flex flex-row">
+      <img src="./src/assets/image/Eg_10.2.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Vamos Brincar de Dinheiro
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            <label for="name">A soma das moedas exibidas abaixo é:</label><br />
+            <input
+              type="number"
+              name="value"
+              id="value"
+              step="0.01"
+              min="0.01"
+              class="border-2 rounded-md px-2 w-[400px]"
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Conferir Resposta"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="clean"
+              value="Exibir Novas Moedas"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <div class="container-coins mt-8 flex flex-wrap"></div>
+      </div>
+    </section>
+    <!-- Favorite Movie - Eg_10.3-->
+    <section class="movieList format-section flex flex-row">
+      <img src="./src/assets/image/Eg_2.9.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Meus Filmes Favoritos
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            <label for="name">Título do Filme</label><br />
+            <input
+              type="text"
+              name="movie"
+              id="movie"
+              class="border-2 rounded-md px-2 w-[400px]"
+            />
+          </p>
+          <p class="mt-4">
+            <label for="name">Gênero</label><br />
+            <input
+              type="text"
+              name="genre"
+              id="genre"
+              class="border-2 rounded-md px-2 w-[400px]"
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Adicionar"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
+        <table class="mt-4 w-full">
+          <tr class="text-left bg-gray-500">
+            <th class="text-white p-2">Título do Filme</th>
+            <th class="text-white p-2">Gênero</th>
+            <th class="text-white p-2">Ações</th>
+          </tr>
+        </table>
+        <div class="container-coins mt-8 flex flex-wrap"></div>
+      </div>
+    </section>
+    <!-- Birthday Candles - Eg_10.4.a-->
+    <section class="bth format-section flex flex-row">
+      <img src="./src/assets/image/Eg_10.4.a.png" class="format-image" />
+      <div class="content">
+        <h1 class="font-bold text-3xl pb-2 border-b-2 border-gray-400">
+          Velas de Aniversário
+        </h1>
+        <form class="ml-2">
+          <p class="mt-4">
+            <label for="name">Idade</label><br />
+            <input
+              type="text"
+              name="age"
+              id="age"
+              class="border-2 rounded-md px-2 w-[400px]"
+            />
+          </p>
+          <p class="mt-4">
+            <input
+              type="submit"
+              id="submit"
+              value="Exibir Velas"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+            <input
+              type="button"
+              id="clean"
+              value="Novas Velas"
+              class="ml-2 bg-gray-300 px-4 py-1 rounded shadow-md shadow-gray-500 border-2 rounded-md"
+            />
+          </p>
+        </form>
       </div>
     </section>
     <script type="module" src="./src/assets/js/index.js"></script>

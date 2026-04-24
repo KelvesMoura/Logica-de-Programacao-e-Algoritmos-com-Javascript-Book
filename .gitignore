@@ -1,0 +1,7 @@
+# System Files (Windows e Mac)
+.DS_Store
+thumbs.db
+desktop.ini
+
+# Logs and temporary files
+.vscode/

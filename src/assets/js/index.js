@@ -5,3 +5,4 @@ import "./chapters/ch06.js";
 import "./chapters/ch07.js";
 import "./chapters/ch08.js";
 import "./chapters/ch09.js";
+import "./chapters/ch10.js";

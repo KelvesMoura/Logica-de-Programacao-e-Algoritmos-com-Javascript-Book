@@ -425,3 +425,287 @@ export const executeService = (form) => {
     outputService.innerText = resp;
   }
 };
+
+// To Do List - Eg_10.1
+
+export const addTaskList = (section) => {
+  const taskFrm = qsChild("form", section);
+  const taskInput = taskFrm.tasks.value;
+
+  const h5 = document.createElement("h5");
+  const textTask = document.createTextNode(taskInput);
+
+  const list = qsChild(".divContent", section) || createDiv(section);
+
+  list.appendChild(h5);
+  h5.appendChild(textTask);
+
+  taskFrm.tasks.value = "";
+  taskFrm.tasks.focus();
+};
+
+const createDiv = (section) => {
+  const content = qsChild(".content", section);
+
+  const div = document.createElement("div");
+  div.className = "divContent mt-6 font-bold text-wrap";
+
+  return content.appendChild(div);
+};
+
+export const taskSelected = (section) => {
+  const tasks = qsChildAll("h5", section);
+
+  if (tasks.length == 0) {
+    alert("Não há tarefas para selecionar");
+    return;
+  }
+
+  let aux = -1; //to avoid an undefined error if no h5 is found
+
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].className == "selected") {
+      tasks[i].className = "normal";
+      aux = i;
+      break;
+    }
+  }
+
+  if (aux == tasks.length - 1) {
+    aux = -1;
+  }
+
+  tasks[aux + 1].className = "selected";
+};
+
+export const taskDeleted = (section) => {
+  const tasks = qsChildAll("h5", section);
+
+  let aux = -1;
+
+  tasks.forEach((task, i) => {
+    if (tasks[i].className == "selected") {
+      aux = i;
+    }
+  });
+
+  if (aux == -1) {
+    alert("Selecione uma tarefa para removê-la...");
+    return;
+  }
+
+  if (confirm(`Confirma Exclusão de ${tasks[aux].innerText}`)) {
+    const taskList = qsChild(".divContent", section);
+    taskList.removeChild(tasks[aux]);
+  }
+};
+
+export const taskSaved = (section) => {
+  const tasks = qsChildAll("h5", section);
+
+  if (tasks.length == 0) {
+    alert("Não há tarefas para serem salvas");
+    return;
+  }
+
+  let dados = "";
+
+  tasks.forEach((task) => (dados += `${task.innerText};`));
+
+  localStorage.setItem("task", dados.slice(0, -1));
+
+  if (localStorage.getItem("task")) {
+    alert("Tarefas Salvas com Sucesso");
+  }
+};
+
+export const showTasks = (section) => {
+  if (localStorage.getItem("task")) {
+    createDiv(section);
+
+    const dados = localStorage.getItem("task").split(";");
+
+    dados.forEach((task) => addTaskListStorage(task, section));
+  }
+};
+
+const addTaskListStorage = (task, section) => {
+  const h5 = document.createElement("h5");
+  const textTask = document.createTextNode(task);
+
+  const list = qsChild(".divContent", section) || createDiv(section);
+
+  list.appendChild(h5);
+  h5.appendChild(textTask);
+};
+
+// Guess Amount Game - Eg_10.2
+
+export const addCoins = (section) => {
+  const container = qsChild(".container-coins", section);
+
+  const coins = [
+    {
+      qtd: randomCoins(),
+      img: "1_00.png",
+      alt: "Moedas de um real",
+      class: "moeda100",
+    },
+    {
+      qtd: randomCoins(),
+      img: "0_50.png",
+      alt: "Moedas de cinquenta centavos",
+      class: "moeda050",
+    },
+    {
+      qtd: randomCoins(),
+      img: "0_25.png",
+      alt: "Moedas de vinte e cinco centavos",
+      class: "moeda025",
+    },
+    {
+      qtd: randomCoins(),
+      img: "0_10.png",
+      alt: "Moedas de dez centavos",
+      class: "moeda010",
+    },
+  ];
+
+  createCoins(container, coins);
+};
+
+const randomCoins = () => Math.ceil(Math.random() * 5);
+
+const createCoins = (div, coins) => {
+  coins.forEach((item) => {
+    for (let i = 0; i < item.qtd; i++) {
+      const newCoins = document.createElement("img");
+      newCoins.src = `./src/assets/image/Eg_10.2_${item.img}`;
+      newCoins.alt = item.alt;
+      newCoins.classList.add(item.class);
+      div.appendChild(newCoins);
+    }
+    const divLine = document.createElement("div");
+    divLine.className = "line w-full";
+    div.appendChild(divLine);
+  });
+
+  return div;
+};
+
+export const checkCoins = (section) => {
+  const frm = qsChild("form", section);
+  const value = Number(qsChild("form #value", section).value);
+  const imgCoins = qsChild(".container-coins", section);
+  const sumCoins = qsChildAll("img", imgCoins);
+
+  let totalCoins = 0;
+
+  const valueCoins = {
+    moeda100: 1,
+    moeda050: 0.5,
+    moeda025: 0.25,
+    moeda010: 0.1,
+  };
+
+  sumCoins.forEach((item) => {
+    if (item.className in valueCoins) {
+      totalCoins += Number(valueCoins[item.className]);
+    }
+  });
+
+  const resp = document.createElement("div");
+  const h3 = document.createElement("h3");
+  h3.className = "font-bold text-2xl";
+
+  let message;
+
+  if (totalCoins.toFixed(2) == value) {
+    message = `Parabéns! Você acertou!`;
+  } else {
+    message = `Ops.. A resposta correta é ${totalCoins.toFixed(2)}`;
+  }
+
+  const outputMessage = document.createTextNode(message);
+
+  h3.appendChild(outputMessage);
+  resp.appendChild(h3);
+  imgCoins.appendChild(resp);
+
+  frm.submit.disabled = true;
+};
+
+export const resetCoins = (section) => {
+  const gmFrm = qsChild("form", section);
+  const gmCoins = qsChild(".container-coins", section);
+
+  gmCoins.innerHTML = "";
+  addCoins(section);
+  gmFrm.submit.disabled = false;
+  gmFrm.reset();
+};
+
+// Favorite Movie - Eg_10.3
+
+export const insertMovie = (movie, genre, table) => {
+  const line = table.insertRow(-1);
+
+  const col1 = line.insertCell(0);
+  const col2 = line.insertCell(1);
+  const col3 = line.insertCell(2);
+
+  const cols = [col1, col2, col3];
+
+  cols.forEach((item) => (item.className = "p-2 text-left"));
+
+  col1.innerText = movie;
+  col2.innerText = genre;
+  col3.innerHTML = `<i class="exclui" title="Excluir">&#10008;</i>`;
+};
+
+export const saveMovie = (movie, genre) => {
+  if (localStorage.getItem("movie")) {
+    const addMovie = `${localStorage.getItem("movie")};${movie}`;
+    const addGenre = `${localStorage.getItem("genre")};${genre}`;
+
+    localStorage.setItem("movie", addMovie);
+    localStorage.setItem("genre", addGenre);
+  } else {
+    localStorage.setItem("movie", movie);
+    localStorage.setItem("genre", genre);
+  }
+};
+
+export const showMovies = (table) => {
+  if (localStorage.getItem("movie")) {
+    const movies = localStorage.getItem("movie").split(";");
+    const genre = localStorage.getItem("genre").split(";");
+
+    let list = "";
+
+    movies.forEach((movie, i) => (list = insertMovie(movie, genre[i], table)));
+  }
+};
+
+export const removeMovie = (e, tableList) => {
+  if (e.target.classList.contains("exclui")) {
+    const title = e.target.parentElement.parentElement.children[0].innerText;
+
+    if (confirm(`Confirma a Exclusão do Filme ${title}`)) {
+      e.target.parentElement.parentElement.remove();
+      localStorage.removeItem("movie");
+      localStorage.removeItem("genre");
+
+      // Start with 1 due to Header
+      for (let i = 1; i < tableList.rows.length; i++) {
+        const movie = tableList.rows[i].cell[0].innerText;
+        const genre = tableList.rows[i].cell[1].innerText;
+
+        saveMovie(movie, genre);
+      }
+    }
+  }
+};
+
+
+// Birthday candlese - Eg_10.4.a
