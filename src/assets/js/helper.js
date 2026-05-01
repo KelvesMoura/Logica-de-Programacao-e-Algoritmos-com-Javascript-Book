@@ -16,9 +16,9 @@ export const resetFull = (fieldReset) => {
   const newListField = Object.values(fieldReset);
   newListField[0].reset();
 
-  if (newListField.length > 0) {
+  if (newListField.length > 0)
     newListField.slice(1).forEach((item) => (item.innerText = ""));
-  }
+
   return;
 };
 
@@ -219,17 +219,18 @@ function changePhoto(parent, lowerCase, clubActived) {
 
 export const checkUser = (club) => {
   const output = qsChild("pre", club);
-  let count;
+  let count = 0;
 
   if (localStorage.getItem("counter")) {
-    count = Number(localStorage.getItem("counter")) + 1;
-    localStorage.setItem("counter", count);
+    count = Number(localStorage.getItem("counter"));
+    count++;
     output.innerText = `Que bom que você voltou! Esta é a sua visita de número ${count} ao nosso site.\n\nAperte Ctrl + Shift + Q para resetar o contador`;
   } else {
     count += 1;
-    localStorage.setItem("counter", count);
     output.innerText = `Muito Bem-Vindo! Esta é a sua primeira visita ao nosso site.`;
   }
+
+  localStorage.setItem("counter", count);
 };
 
 export const resetUser = (e, club) => {
@@ -237,7 +238,7 @@ export const resetUser = (e, club) => {
     const output = qsChild("pre", club);
     e.preventDefault();
     localStorage.removeItem("counter");
-    localStorage.setItem("counter", 1);
+    checkUser(club);
     output.innerText = `Muito Bem-Vindo! Esta é a sua primeira visita ao nosso site.`;
   }
 };
@@ -289,9 +290,7 @@ export const checkWinner = () => {
 
   const correctWeight = Number(prompt("Qual o peso correto da Melancia?"));
 
-  if (correctWeight == 0 || isNaN(correctWeight)) {
-    return;
-  }
+  if (correctWeight == 0 || isNaN(correctWeight)) return;
 
   const names = localStorage.getItem("name").split(";");
   const weight = localStorage.getItem("weight").split(";");
@@ -471,9 +470,7 @@ export const taskSelected = (section) => {
     }
   }
 
-  if (aux == tasks.length - 1) {
-    aux = -1;
-  }
+  if (aux == tasks.length - 1) aux = -1;
 
   tasks[aux + 1].className = "selected";
 };
@@ -484,9 +481,7 @@ export const taskDeleted = (section) => {
   let aux = -1;
 
   tasks.forEach((task, i) => {
-    if (tasks[i].className == "selected") {
-      aux = i;
-    }
+    if (tasks[i].className == "selected") aux = i;
   });
 
   if (aux == -1) {
@@ -514,9 +509,7 @@ export const taskSaved = (section) => {
 
   localStorage.setItem("task", dados.slice(0, -1));
 
-  if (localStorage.getItem("task")) {
-    alert("Tarefas Salvas com Sucesso");
-  }
+  if (localStorage.getItem("task")) alert("Tarefas Salvas com Sucesso");
 };
 
 export const showTasks = (section) => {
@@ -546,25 +539,25 @@ export const addCoins = (section) => {
 
   const coins = [
     {
-      qtd: randomCoins(),
+      qtd: Math.ceil(Math.random() * 5),
       img: "1_00.png",
       alt: "Moedas de um real",
       class: "moeda100",
     },
     {
-      qtd: randomCoins(),
+      qtd: Math.ceil(Math.random() * 5),
       img: "0_50.png",
       alt: "Moedas de cinquenta centavos",
       class: "moeda050",
     },
     {
-      qtd: randomCoins(),
+      qtd: Math.ceil(Math.random() * 5),
       img: "0_25.png",
       alt: "Moedas de vinte e cinco centavos",
       class: "moeda025",
     },
     {
-      qtd: randomCoins(),
+      qtd: Math.ceil(Math.random() * 5),
       img: "0_10.png",
       alt: "Moedas de dez centavos",
       class: "moeda010",
@@ -573,8 +566,6 @@ export const addCoins = (section) => {
 
   createCoins(container, coins);
 };
-
-const randomCoins = () => Math.ceil(Math.random() * 5);
 
 const createCoins = (div, coins) => {
   coins.forEach((item) => {
@@ -601,16 +592,9 @@ export const checkCoins = (section) => {
 
   let totalCoins = 0;
 
-  const valueCoins = {
-    moeda100: 1,
-    moeda050: 0.5,
-    moeda025: 0.25,
-    moeda010: 0.1,
-  };
-
   sumCoins.forEach((item) => {
-    if (item.className in valueCoins) {
-      totalCoins += Number(valueCoins[item.className]);
+    if (item.className in c.valueCoins) {
+      totalCoins += Number(c.valueCoins[item.className]);
     }
   });
 
@@ -707,5 +691,388 @@ export const removeMovie = (e, tableList) => {
   }
 };
 
+// Birthday Candles - Eg_10.4.a
 
-// Birthday candlese - Eg_10.4.a
+export const addAge = (section) => {
+  const submit = qsChild("form #submit", section);
+  const fieldAge = qsChild("#age", section);
+  const ageNumber = Number(fieldAge.value);
+  const ageString = fieldAge.value;
+
+  const space = qsChild(".divContent", section) || createDiv(section);
+  space.innerHTML = "";
+  space.classList.add("flex");
+  space.classList.add("flex-row");
+  space.classList.add("gap-2");
+
+  if (ageNumber == 0 || ageNumber > 120) {
+    alert("Idade inválida, digite uma idade entre 1 a 120 anos!");
+    fieldAge.value = "";
+    fieldAge.focus();
+    return;
+  }
+
+  if (ageNumber > 10) {
+    for (let i = 0; i < ageString.length; i++) {
+      const newImg = document.createElement("img");
+      newImg.src = `./src/assets/image/Eg_10.4.a_${ageString.charAt(i)}.png`;
+      newImg.alt = `Imagem de número ${ageString.charAt(i)}`;
+      newImg.classList.add("ageImg");
+      space.appendChild(newImg);
+    }
+  } else {
+    const newImg = document.createElement("img");
+    newImg.src = `./src/assets/image/Eg_10.4.a_${ageString}.png`;
+    newImg.alt = `Imagem de número ${ageString}`;
+    newImg.classList.add("ageImg");
+    space.appendChild(newImg);
+  }
+  fieldAge.value = "";
+  submit.disabled = true;
+};
+
+export const colorLines = (section) => {
+  const lines = qsChildAll("table tr", section);
+
+  for (let i = 1; i < lines.length; i++) {
+    if (i % 2 == 0) lines[i].className = "bg-gray-300";
+  }
+};
+
+export const resetAge = (section) => {
+  const submit = qsChild("form #submit", section);
+  const ageField = qsChild("form #age", section);
+  const space = qsChild(".divContent", section);
+
+  space.innerHTML = "";
+  submit.disabled = false;
+  ageField.focus();
+};
+
+//Colorful Name - Eg_10.4.b
+export const colorName = (section) => {
+  const names = qsChild("form #name", section).value.split(" ");
+
+  const space = qsChild(".divContent", section) || createDiv(section);
+  space.innerHTML = "";
+
+  names.forEach((name) => {
+    const nameList = document.createTextNode(name.toUpperCase());
+    const lineName = document.createElement("h3");
+    lineName.appendChild(nameList);
+    space.appendChild(lineName);
+
+    const numberColor = Math.ceil(Math.random() * 10);
+
+    lineName.className = `text-${c.color[numberColor]}-600`;
+  });
+};
+
+//Brazil Cup - Qualifiers - Eg_10.4.c
+export const addClub = (section) => {
+  const frm = qsChild("form", section);
+  const club = qsChild("form #club", section).value;
+
+  const space = qsChild(".divContent", section) || createDiv(section);
+  space.classList.add("w-full");
+
+  const clubInput = document.createTextNode(club);
+  const h5 = document.createElement("h5");
+  h5.className = "text-right italic";
+
+  space.appendChild(h5);
+  h5.appendChild(clubInput);
+
+  frm.club.value = "";
+  frm.club.focus();
+};
+
+export const createTable = (section) => {
+  const frm = qsChild("form", section);
+  const listClub = qsChildAll("h5", section);
+
+  if (listClub.length % 2 != 0) {
+    alert(`Favor inserir mais um club para distribuição dos jogos`);
+    frm.club.focus();
+    return;
+  }
+
+  const spaceTable = qsChild(".divTable", section) || createDivTable(section);
+
+  const table = document.createElement("table");
+  table.className = "w-full";
+
+  spaceTable.appendChild(table);
+
+  const line = table.insertRow(0);
+  const title = line.insertCell(0);
+  title.className = "font-bold text-2xl p-2";
+  title.innerText = "Tabela de Jogos";
+
+  let currentLine;
+
+  for (let i = 0; i < listClub.length; i++) {
+    const clubName = listClub[i].innerText;
+    if (i % 2 == 0) {
+      currentLine = table.insertRow(-1);
+      const col1 = currentLine.insertCell(0);
+      col1.innerText = clubName;
+      col1.className = "p-2 text-left w-1/2";
+    } else {
+      const col2 = currentLine.insertCell(1);
+      col2.innerText = clubName;
+      col2.className = "p-2 text-left w-1/2";
+    }
+  }
+
+  const lines = qsChildAll("table tr", section);
+
+  for (let i = 1; i < lines.length; i++) {
+    if (i % 2 !== 0) lines[i].className = "bg-gray-300";
+  }
+
+  frm.submit.disabled = frm.table.disabled = true;
+};
+
+const createDivTable = (section) => {
+  const divContent = qsChild(".divContent", section);
+
+  const div = document.createElement("div");
+  div.className = "divTable mt-6 font-bold text-wrap w-full";
+
+  return divContent.appendChild(div);
+};
+
+export const resetClubs = (section) => {
+  const frm = qsChild("form", section);
+  const space = qsChild(".divContent", section);
+
+  space.innerHTML = "";
+  frm.submit.disabled = frm.table.disabled = false;
+  frm.club.focus();
+};
+
+// Jockey Club - Eg_11.1
+
+export const addHorse = (section, bets, horseList) => {
+  const frm = qsChild("form", section);
+  const horseBet = Number(qsChild("#horse", section).value);
+  const valueBet = Number(qsChild("#bet", section).value);
+  const output = qsChild("pre", section);
+
+  bets.push({ horse: horseBet, value: valueBet });
+
+  let list = `Apostas Realizadas\n${"-".repeat(40)}\n`;
+
+  bets.forEach((item) => {
+    list += `N°${item.horse} ${fetchHorse(item.horse)} - R$ ${currencyFormat(item.value)}\n`;
+  });
+
+  frm.reset();
+  frm.horse.focus();
+
+  return (output.innerText = list);
+};
+
+const fetchHorse = (horse) => c.horseName[horse - 1];
+
+export const removeBlur = (section, bets) => {
+  const frm = qsChild("form", section);
+  const h5 = qsChild("h5", section);
+  const horseBet = Number(qsChild("#horse", section).value);
+  const valueBet = Number(qsChild("#bet", section).value);
+
+  if (horseBet == "") {
+    h5.innerText = "";
+    return;
+  }
+
+  if (!checkHorse(horseBet)) {
+    alert(
+      `N° do cavalo Inválido. Escolha o número de 1 a ${c.horseName.length}`,
+    );
+    frm.horse.value = "";
+    frm.horse.focus();
+    return;
+  }
+
+  h5.innerText = `${fetchHorse(horseBet)} (Apostas: ${totalTimes(horseBet, bets)} - R$ ${currencyFormat(totalBet(horseBet, bets))})`;
+};
+
+const checkHorse = (horse) => {
+  return horse >= 1 && horse <= c.horseName.length;
+};
+
+const totalTimes = (horseBet, bets) => {
+  let count = 0;
+
+  bets.forEach((bet) => {
+    if (bet.horse == horseBet) count++;
+  });
+
+  return count;
+};
+
+const totalBet = (horseBet, bets) => {
+  let price = 0;
+
+  bets.forEach((bet) => {
+    price += bet.horse == horseBet ? bet.value : 0;
+  });
+
+  return price;
+};
+
+export const sumBet = (section, bets) => {
+  const output = qsChild("pre", section);
+
+  const sum = bets.reduce((acc, bet) => {
+    if (bet.horse in acc) {
+      acc[bet.horse] += bet.value;
+    } else {
+      acc[bet.horse] = bet.value;
+    }
+
+    return acc;
+  }, {});
+
+  const sumSort = Object.entries(sum).sort((a, b) => b[1] - a[1]);
+
+  const changeName = sumSort.map(
+    ([id, total]) =>
+      `${id} ${fetchHorse(Number(id)).padEnd(20)}${currencyFormat(total).toString().padStart(11)}`,
+  );
+
+  let outputList = "";
+
+  changeName.forEach((item, i) => (outputList += `${item}\n`));
+
+  return (output.innerText = `N° Cavalo${".".repeat(14)}R$ Apostado\n${"-".repeat(34)}\n${outputList}`);
+};
+
+export const winnerHorse = (section, bets) => {
+  const output = qsChild("pre", section);
+  const frm = qsChild("form", section);
+  const winner = Number(prompt(`N° do Cavalo Ganhador`));
+
+  if (isNaN(winner) && !checkHorse(winner)) {
+    alert(`Cavalo Inválido`);
+    return;
+  }
+
+  const totalBetsValue = bets.reduce((acc, bet) => acc + bet.value, 0);
+
+  let message = `Resultado do Páreo\n${"-".repeat(24)}\nN° Total de Apostas: ${c.horseName.length}\nTotal Geral R$: ${currencyFormat(totalBetsValue)}\n\nGanhador N° ${winner} - ${fetchHorse(winner)}\n\nN° de Apostas: ${totalTimes(winner, bets)}\nTotal Apostado R$: ${currencyFormat(totalBet(winner, bets))}`;
+
+  output.innerText = message;
+
+  frm.submit.disabled = frm.list.disabled = true;
+  frm.newBet.focus();
+};
+
+export const newBet = (section, bets) => {
+  const frm = qsChild("form", section);
+  const output = qsChild("pre", section);
+
+  output.innerText = "";
+
+  bets.splice(0, bets.length);
+
+  frm.submit.disabled = frm.list.disabled = false;
+};
+
+// Seat Reservations Program - Eg_11.2
+export const includeSeat = (section, reservedSeat) => {
+  const palco = qsChild("#divPalco", section);
+
+  const reserved = localStorage.getItem("reserveSeat")
+    ? localStorage.getItem("reserveSeat").split(";")
+    : [];
+
+  for (let i = 1; i <= c.seats; i++) {
+    const figure = document.createElement("figure");
+    const img = document.createElement("img");
+
+    img.src = reserved.includes(i.toString())
+      ? "./src/assets/image/Eg_11.2_seat_taken.png"
+      : "./src/assets/image/Eg_11.2_open_seat.png";
+
+    img.className = "poltrona w-[30px] h-[20px]";
+    figure.className = "mx-1";
+
+    const figCap = document.createElement("figcaption");
+    figCap.className = "text-sm text-center";
+
+    const num = i < 10 ? `00${i}` : i >= 10 && i < 100 ? `0${i}` : `${i}`;
+
+    const seatNumber = document.createTextNode(num);
+
+    figCap.appendChild(seatNumber);
+    figure.appendChild(img);
+    figure.appendChild(figCap);
+
+    if (i % 24 == 12) figure.style.marginRight = "60px";
+
+    palco.appendChild(figure);
+
+    i % 24 == 0 &&
+      `${(palco.appendChild(document.createElement("div")).className = "w-[100%]")}`;
+  }
+};
+
+export const reserveSeat = (section, reservedSeat) => {
+  const frm = qsChild("form", section);
+  const seat = Number(qsChild("#seat", section).value);
+
+  if (seat > c.seats) {
+    alert("Informe um número de poltrona válido");
+    frm.seat.focus();
+    return;
+  }
+
+  const reserved = localStorage.getItem("reserveSeat")
+    ? localStorage.getItem("reserveSeat").split(";")
+    : [];
+
+  if (reserved.includes(seat.toString())) {
+    alert(`Poltrona ${seat} já esta ocupada...`);
+    frm.seat.value = "";
+    frm.seat.focus();
+    return;
+  }
+
+  const imgSeat = qsChildAll("#divPalco img", section)[seat - 1];
+
+  imgSeat.src = "./src/assets/image/Eg_11.2_reserved_seat.png";
+
+  reservedSeat.push(seat);
+
+  frm.seat.value = "";
+  frm.seat.focus();
+};
+
+export const saveSeat = (section, reservedSeat) => {
+  const frm = qsChild("form", section);
+  const seat = Number(qsChild("#seat", section).value);
+
+  if (reservedSeat.length == 0) {
+    alert(`Não há poltronas reservadas`);
+    frm.seat.focus();
+    return;
+  }
+
+  const reserved = localStorage.getItem("reserveSeat")
+    ? localStorage.getItem("reserveSeat").split(";")
+    : [];
+
+  for (let i = reservedSeat.length - 1; i >= 0; i--) {
+    reserved.push(reservedSeat[i]);
+
+    const imgSeat = qsChildAll("#divPalco img", section)[reservedSeat[i] - 1];
+
+    imgSeat.src = "./src/assets/image/Eg_11.2_seat_taken.png";
+
+    reservedSeat.pop();
+  }
+  localStorage.setItem("reserveSeat", reserved.join(";"));
+};

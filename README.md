@@ -63,7 +63,8 @@ project/
         │       ├── ch07.js     # Chapter 7 — Strings, Validation & Text
         │       ├── ch08.js     # Chapter 8 — Objects & Data Processing
         │       ├── ch09.js     # Chapter 9 — localStorage & Persistent State
-        │       └── ch10.js     # Chapter 10 — DOM Manipulation & Dynamic UI
+        │       ├── ch10.js     # Chapter 10 — DOM Manipulation & Dynamic UI
+        │       └── ch11.js     # Chapter 11 — Arrays of Objects & 2D Arrays
         └── image/              # Reference screenshots per exercise (Eg_X.Y.png)
 ```
 
@@ -86,6 +87,7 @@ import "./chapters/ch07.js";
 import "./chapters/ch08.js";
 import "./chapters/ch09.js";
 import "./chapters/ch10.js";
+import "./chapters/ch11.js";
 ```
 
 ### Shared utilities — `helper.js` and `constant.js`
@@ -149,6 +151,21 @@ import * as c from "../constant.js";
 | `saveMovie(movie, genre)` | Appends a movie and genre to `localStorage` |
 | `showMovies(table)` | Restores the movie list from `localStorage` on page load |
 | `removeMovie(e, tableList)` | Removes a movie row from the DOM and updates `localStorage` |
+| `colorLines(section)` | Applies alternating row colors to the movie table |
+| `addAge(section)` | Renders birthday candle images based on digit of the entered age |
+| `resetAge(section)` | Clears the candle display and resets the form |
+| `colorName(section)` | Renders each letter of a name in a different color |
+| `addClub(section)` | Adds a club entry to the Brazil Cup qualifiers list |
+| `createTable(section)` | Generates the qualifiers match table from registered clubs |
+| `resetClubs(section)` | Clears all clubs and resets the qualifiers section |
+| `addHorse(section, bets)` | Validates and registers a horse bet in the Jockey Club |
+| `removeBlur(section, bets)` | Handles blur event to validate horse selection |
+| `sumBet(section, bets)` | Calculates and displays the total bet amount |
+| `winnerHorse(section, bets)` | Determines and announces the winning horse |
+| `newBet(section, bets)` | Resets the Jockey Club for a new betting round |
+| `includeSeat(section, reservedSeat)` | Renders the full theater seat grid on load |
+| `reserveSeat(section, reservedSeat)` | Marks a specific seat as reserved in the grid |
+| `saveSeat(section, reservedSeat)` | Persists reserved seat state to `localStorage` |
 
 ### `constant.js` — Shared constants
 
@@ -177,6 +194,10 @@ import * as c from "../constant.js";
 | `childAge` | `12` | Upper age limit for Infantil category |
 | `youngAge` | `13` | Lower age limit for Juvenil category |
 | `adultAge` | `18` | Upper age limit for Juvenil category |
+| `valueCoins` | `Object` | Maps coin CSS class to its monetary value (R$) |
+| `color` | `Object` | Maps numbers 1–9 to color names for birthday candle rendering |
+| `horseName` | `Array` | List of 6 horse names used in the Jockey Club game |
+| `seats` | `240` | Total seat count for the theater reservation program |
 
 ---
 
@@ -451,8 +472,10 @@ Concepts practiced:
 
 - 📋 **To Do List** — task manager with add, select, delete and save to `localStorage`, restored on page load
 - 🪙 **Guess Amount Game** — randomly generates coin images on screen; the user guesses the total value and gets immediate feedback
-- 🎬 **Favorite Movie** — persistent movie list stored in `localStorage` with title, genre and per-row deletion via dynamic table
-- 🎂 **Birthday Candles** *(in progress)*
+- 🎬 **Favorite Movie** — persistent movie list stored in `localStorage` with title, genre, alternating row colors and per-row deletion
+- 🎂 **Birthday Candles** — renders candle images based on each digit of the user's age
+- 🌈 **Colorful Name** — displays each letter of a name in a unique color
+- ⚽ **Brazil Cup Qualifiers** — registers clubs and generates a full match table from the entries
 
 Concepts practiced:
 
@@ -464,6 +487,24 @@ Concepts practiced:
 - Event delegation on dynamic elements (click on table rows)
 - State management with class toggling (`selected` / `normal`)
 - Random number generation for game mechanics (`Math.ceil`, `Math.random`)
+- Digit-based image rendering
+- Per-letter color mapping via object lookup
+
+---
+
+# 📖 Chapter 11 — Arrays of Objects and 2D Arrays
+
+- 🐴 **Jockey Club** — horse betting system where users place bets, calculate totals and determine the winner by drawn horse number
+- 🎭 **Seat Reservations** — theater seat map with 240 seats rendered as a 2D grid; supports reservation, visual status feedback (open / reserved / taken) and `localStorage` persistence
+
+Concepts practiced:
+
+- Arrays of objects (bets, seats)
+- 2D array rendering as a grid
+- Dynamic seat state management (open / reserved / taken)
+- `localStorage` for seat persistence across sessions
+- Blur and focus event handling for input validation
+- Accumulated bet totals with winner determination
 
 ---
 

@@ -21,3 +21,33 @@ export const daytoMs = 86400000;
 export const childAge = 12;
 export const youngAge = 13;
 export const adultAge = 18;
+
+export const valueCoins = {
+  moeda100: 1,
+  moeda050: 0.5,
+  moeda025: 0.25,
+  moeda010: 0.1,
+};
+
+export const color = {
+  1: "blue",
+  2: "black",
+  3: "green",
+  4: "red",
+  5: "yellow",
+  6: "pink",
+  7: "orange",
+  8: "cyan",
+  9: "purple",
+};
+
+export const horseName = [
+  "Marujo",
+  "Tordilho",
+  "Belga",
+  "Twister",
+  "Jade",
+  "Lucky",
+];
+
+export const seats = 240;

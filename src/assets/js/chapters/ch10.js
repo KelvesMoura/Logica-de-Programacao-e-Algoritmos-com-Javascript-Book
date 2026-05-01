@@ -56,26 +56,75 @@ gmReset.addEventListener("click", () => h.resetCoins(gmoney));
 const movieL = h.qs(".movieList");
 
 const movieLSelectors = {
-  frm: h.qsChild("form", movieL),
-  movie: h.qsChild("form #movie", movieL),
-  genre: h.qsChild("form #genre", movieL),
-  tableList: h.qsChild("table", movieL),
+  movieLFrm: h.qsChild("form", movieL),
+  movieLMovie: h.qsChild("form #movie", movieL),
+  movieLGenre: h.qsChild("form #genre", movieL),
+  movieLTableList: h.qsChild("table", movieL),
 };
 
-const { frm, movie, genre, tableList } = movieLSelectors;
+const { movieLFrm, movieLMovie, movieLGenre, movieLTableList } =
+  movieLSelectors;
 
 const movieFrm = h.qsChild("form", movieL);
 
 movieFrm.addEventListener("submit", (e) => {
   e.preventDefault();
-  h.insertMovie(movie.value, genre.value, tableList);
-  h.saveMovie(movie.value, genre.value);
-  frm.reset();
-  movie.focus();
+  h.insertMovie(movieLMovie.value, movieLGenre.value, movieLTableList);
+  h.colorLines(movieL);
+  h.saveMovie(movieLMovie.value, movieLGenre.value);
+  movieLFrm.reset();
+  movieLMovie.focus();
 });
 
-window.addEventListener("load", () => h.showMovies(tableList));
+window.addEventListener("load", () => h.showMovies(movieLTableList));
 
-tableList.addEventListener("click", (e) => h.removeMovie(e, tableList));
+movieLTableList.addEventListener("click", (e) =>
+  h.removeMovie(e, movieLTableList),
+);
 
 // Birthday Candles - Eg_10.4.a
+const bth = h.qs(".bth");
+
+const bthSelectors = {
+  bthFrm: h.qsChild("form", bth),
+  bthReset: h.qsChild("form #clean", bth),
+};
+
+const { bthFrm, bthReset } = bthSelectors;
+
+bthFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  h.addAge(bth);
+});
+
+bthReset.addEventListener("click", () => h.resetAge(bth));
+
+// Colorful Name - Eg_10.4.b
+
+const cName = h.qs(".cName");
+
+const cNameFrm = h.qsChild("form", cName);
+
+cNameFrm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  h.colorName(cName);
+});
+
+//Brazil Cup - Qualifiers - Eg_10.4.c
+const bcq = h.qs(".bcq");
+
+const bcqSelectors = {
+  bcqTable: h.qsChild("form #table", bcq),
+  bcqClean: h.qsChild("form #clean", bcq),
+};
+
+const { bcqTable, bcqClean } = bcqSelectors;
+
+bcq.addEventListener("submit", (e) => {
+  e.preventDefault();
+  h.addClub(bcq);
+});
+
+bcqTable.addEventListener("click", () => h.createTable(bcq));
+
+bcqClean.addEventListener("click", () => h.resetClubs(bcq));
